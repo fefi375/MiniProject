@@ -1,29 +1,29 @@
-Bank applik�ci� k�vetelm�nyspecifik�ci�
+Bank applikáció követelményspecifikáció
 
-1. Jelenlegi helyzet:Az OI bankcsorpt egy felt�rekv� v�llalkoz�s ami versenyk�pes kamatokat �s nagy fok� biztons�got k�n�l �gyfelei sz�m�ra  . Viszont bankunknak jelenleg nincs megfelel� applik�ci�ja ugyint�z�s lebonyolit�s�ra.
-   Ez nagyban megnehez�ti az �gyfelek sz�m�ra az �gyint�z�st ,hiszen jelenleg f�zetben �s pap�ron tarjuk nyilv�n az �gyfelek banki adatait. Ez a helyzet trathatatlan.
+1. Jelenlegi helyzet:Az OI bankcsorpt egy feltörekvő vállalkozás ami versenyképes kamatokat és nagy fokú biztonságot kínál ügyfelei számára  . Viszont bankunknak jelenleg nincs megfelelő applikációja ugyintézés lebonyolitására.
+   Ez nagyban megnehezíti az ügyfelek számára az ügyintézést ,hiszen jelenleg füzetben és papíron tarjuk nyilván az ügyfelek banki adatait. Ez a helyzet trathatatlan.
 
-2. V�gy�lom rendszer V�llalkoz�sunk b�v�t�se �rdek�ben szeretn�nk egy telefonos applik�ci�t k�sz�teni ami nem csak megk�nny�ti az ugyint�z�st hanem biztons�gosabb� is teszi azt. Elv�rt a platformf�ggetlens�g ,Nem elfogadhat� csak Microsoft Windows oper�ci�s rendszeren �zemeltethet� rendszerre vonatkoz� javaslat. Az online megjen�s lehet�leg mobil telefonon, tableten is m�k�dj�n, reszponz�v fel�lettel.
+2. Vágyálom rendszer Vállalkozásunk bővítése érdekében szeretnénk egy telefonos applikációt készíteni ami nem csak megkönnyíti az ugyintézést hanem biztonságosabbá is teszi azt. Elvárt a platformfüggetlenség ,Nem elfogadható csak Microsoft Windows operációs rendszeren üzemeltethető rendszerre vonatkozó javaslat. Az online megjenés lehetőleg mobil telefonon, tableten is működjön, reszponzív felülettel.
 
-3. Jelenlegi �zleti folyamatok
-3.1. �j ugyf�l Felv�tele a rendszerbe: banki ugyint�z� v�gzi => f�zetbe val� bejegyz�se
-3.2 Sz�mla nyit�s banki ugyint�z� v�gzi => f�zetbe val� bejegyz�se, a k�zp�nz sz�fben t�rol�sa a f�igazgat� h�l�so�b�ly�ban a festm�ny m�g�tt a k�d 1111
-3.3 Ügyfelek a számlájukon lévő összeget csak a bankban vagy ATM-eknél nézhetik meg.
+3. Jelenlegi üzleti folyamatok
+3.1. Új ugyfél Felvétele a rendszerbe: banki ugyintéző végzi => füzetbe való bejegyzése
+3.2 Számla nyitás banki ugyintéző végzi => füzetbe való bejegyzése, a kézpénz széfben tárolása a főigazgató hálósoábályában a festmény mögött a kód 1111
+3.3 Ügyfelek a számlájukon lévő összeget lekérdezése.
 3.4  Új számla vagy megtakításos számla igénylése -> csak személyesen, papír alapú regisztrálás
 
+4. Igényelt üzleti folyamatok
+4.1. Online megjelenés
+4.1.1. Ügyfél felvitele az adatbázisba: felhasználónév, jelszó felvétele az adatbázisba
+4.1.2. Új számla igénylése: regisztrált felhasználói belépés => "Új számla fül" 
 
-4. Ig�nyelt �zleti folyamatok
-4.1  Ügyfelek felvitele az adatb�zisba: felhasználónév, jelszó.
-4.2 Új számla ig�nyl�se: regisztr�lt felhaszn�l�i bel�p�s => "Új számlát nyitok fül" => 
-4.3 Számlák közti utalások -> tranzakciók logolása, újrautalás lehetősége
+5. A rendszerre vonatkozó szabályok A web felület szabványos eszközökkel készüljön, html/css/javascript. A képek jpeg és png formátumúak lehetnek. A felhasználókat azonosító web oldalak esetében szükséges jogszabályokat be kell tartani: GDPR, ...
 
-5. A rendszerre vonatkoz� szab�lyok A web fel�let szabv�nyos eszk�z�kkel k�sz�lj�n, html/css/javascript. A k�pek jpeg �s png form�tum�ak lehetnek. A felhaszn�l�kat azonos�t� web oldalak eset�ben sz�ks�ges jogszab�lyokat be kell tartani: GDPR, ...
+6. Követelménylista
+K01 Könnyen üzemeltethető rendszer
+K02 Reszponzív dizájn ...
+K03 Három szerepkör kezelése (admin, regisztrált, vendég)
+K04 Adatok megfelelő védelme
 
-6. K�vetelm�nylista
-K01 K�nnyen �zemeltethet� rendszer
-K02 Reszponz�v diz�jn ...
-K03 H�rom szerepk�r kezel�se (admin, regisztr�lt, vend�g)
-
-7. Fogalomsz�t�r
-Operat�v l�zing: ...
+7. Fogalomszótár
+Operatív lízing: ...
 GDPR: ...
