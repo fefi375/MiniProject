@@ -1,5 +1,5 @@
 
-# Összefoglaló
+#  Fejezetek
 - [Áttekintés](#áttekintés)
 - [Jelenlegi helyzet](#jelenlegi-helyzet)
 - [Követelménylista](#követelménylista)
@@ -14,20 +14,20 @@
 
 <br>
 
-1. ## Áttekintés<br>
+1. ##  Áttekintés<br>
 
-<br>A célunk egy egyszerű online banki applikáció létrehozása a bankszámlák kezelésének megkönnyítésére. Az applikációt az adott bank bármely ottani bankszámlával rendelkező felhasználó igénybe veheti. <br><br>
+    <br>A célunk egy egyszerű online banki applikáció létrehozása a bankszámlák kezelésének megkönnyítésére. Az applikációt az adott bank bármely ottani bankszámlával rendelkező felhasználó igénybe veheti. <br><br>
 
 2. ## Jelenlegi helyzet<br>
 
-<br>A megrendelő szeretné modernizálni bankja elérhetőségét egy online banki applikációval annak érdekében, hogy lépést tudjon tartani versenytársaival.
-Egy teljes mértékben online alkalmazás tervezését és megalakítását rendelte meg. Az applikáció segít minden ezen banki számlával rendelkező fogyasztónak a gyors számlakezelésben, beleértve a számlán lévő pénzösszeg megtekintését, a pénzfelvétel esetén előre megszabott összeghez egyedi kód generálás ATM-es pénzfelvétel megkönnyítése érdekében, pénzáutalás, kamatos kamatszámítás.<br><br>
+    <br>A megrendelő szeretné modernizálni bankja elérhetőségét egy online banki applikációval annak érdekében, hogy lépést tudjon tartani versenytársaival.
+    Egy teljes mértékben online alkalmazás tervezését és megalakítását rendelte meg. Az applikáció segít minden ezen banki számlával rendelkező fogyasztónak a gyors számlakezelésben, beleértve a számlán lévő pénzösszeg megtekintését, a pénzfelvétel esetén előre megszabott összeghez egyedi kód generálás ATM-es pénzfelvétel megkönnyítése érdekében, pénzáutalás, kamatos kamatszámítás.<br><br>
 
 3. ## Követelménylista<br>
 
-<br>
+
     |   Modul   |   ID  |   Név |   version |   Kifejtés    |
-    |-----------|-------|-------|-----------|---------------|
+    |:----------|:------|:------|:----------|:--------------|
     |   Jogosultság |   1  |    Bejelentkezés   |   1.0 |   A felhasználó az email címe illetve jelszó párossal bejelentkezhet. Ha az email és jelszó páros nem megfelelő, hibaüzenetet kap. |
     |   Jogosultság    |   2   |   PIN Recovery    |   1.0 |   A felhasználó elfelejtett PIN kód esetén lekérdezheti a PIN kódját. |
     |   Felület |   3   |   Balance Check   |   1.0 |   A felhasználó megnézheti a számláján való összeget.|
@@ -49,7 +49,10 @@ Egy teljes mértékben online alkalmazás tervezését és megalakítását rend
 
 8. ## Képernyőtervek<br><br>
 
-9. ## Forgatókönyv<br><br>
+9. ## Forgatókönyv<br>
+
+    <br>A felhasználó számlanyitás után, esetleg számlanyitás közben egyből regisztrálhat a felületen. Bejelentkezést követően hozzájut saját bankszámlaadataihoz, beleértve számlaszámát és a számlán lévő pénzösszeg mennyiségét. Számlájára nyomva elérheti a pénzátutalás illetve pénzfelvételhez való kódgenerálást.
+    <br><br>
 
 10. ## Funkció<br><br>
 
