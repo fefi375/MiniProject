@@ -1,36 +1,29 @@
-Bank applikáció követelményspecifikáció
+Bank applikï¿½ciï¿½ kï¿½vetelmï¿½nyspecifikï¿½ciï¿½
 
-1. Jelenlegi helyzet:Az OI bankcsorpt egy feltörekvõ vállalkozás ami versenyképes kamatokat és nagy fokú biztonságot kínál ügyfelei számára  . Viszont bankunknak jelenleg nincs megfelelõ applikációja ugyintézés lebonyolitására.
-   Ez nagyban megnehezíti az ügyfelek számára az ügyintézést ,hiszen jelenleg füzetben és papíron tarjuk nyilván az ügyfelek banki adatait. Ez a helyzet trathatatlan.
+1. Jelenlegi helyzet:Az OI bankcsorpt egy feltï¿½rekvï¿½ vï¿½llalkozï¿½s ami versenykï¿½pes kamatokat ï¿½s nagy fokï¿½ biztonsï¿½got kï¿½nï¿½l ï¿½gyfelei szï¿½mï¿½ra  . Viszont bankunknak jelenleg nincs megfelelï¿½ applikï¿½ciï¿½ja ugyintï¿½zï¿½s lebonyolitï¿½sï¿½ra.
+   Ez nagyban megnehezï¿½ti az ï¿½gyfelek szï¿½mï¿½ra az ï¿½gyintï¿½zï¿½st ,hiszen jelenleg fï¿½zetben ï¿½s papï¿½ron tarjuk nyilvï¿½n az ï¿½gyfelek banki adatait. Ez a helyzet trathatatlan.
 
-2. Vágyálom rendszer Vállalkozásunk bõvítése érdekében szeretnénk egy telefonos applikációt készíteni ami nem csak megkönnyíti az ugyintézést hanem biztonságosabbá is teszi azt. Elvárt a platformfüggetlenség ,Nem elfogadható csak Microsoft Windows operációs rendszeren üzemeltethetõ rendszerre vonatkozó javaslat. Az online megjenés lehetõleg mobil telefonon, tableten is mûködjön, reszponzív felülettel.
+2. Vï¿½gyï¿½lom rendszer Vï¿½llalkozï¿½sunk bï¿½vï¿½tï¿½se ï¿½rdekï¿½ben szeretnï¿½nk egy telefonos applikï¿½ciï¿½t kï¿½szï¿½teni ami nem csak megkï¿½nnyï¿½ti az ugyintï¿½zï¿½st hanem biztonsï¿½gosabbï¿½ is teszi azt. Elvï¿½rt a platformfï¿½ggetlensï¿½g ,Nem elfogadhatï¿½ csak Microsoft Windows operï¿½ciï¿½s rendszeren ï¿½zemeltethetï¿½ rendszerre vonatkozï¿½ javaslat. Az online megjenï¿½s lehetï¿½leg mobil telefonon, tableten is mï¿½kï¿½djï¿½n, reszponzï¿½v felï¿½lettel.
 
-3. Jelenlegi üzleti folyamatok
-3.1. Új ugyfél Felvétele a rendszerbe: banki ugyintézõ végzi => füzetbe való bejegyzése
-3.2 Számla nyitás banki ugyintézõ végzi => füzetbe való bejegyzése, a kézpénz széfben tárolása a fõigazgató hálósoábályában a festmény mögött a kód 1111
+3. Jelenlegi ï¿½zleti folyamatok
+3.1. ï¿½j ugyfï¿½l Felvï¿½tele a rendszerbe: banki ugyintï¿½zï¿½ vï¿½gzi => fï¿½zetbe valï¿½ bejegyzï¿½se
+3.2 Szï¿½mla nyitï¿½s banki ugyintï¿½zï¿½ vï¿½gzi => fï¿½zetbe valï¿½ bejegyzï¿½se, a kï¿½zpï¿½nz szï¿½fben tï¿½rolï¿½sa a fï¿½igazgatï¿½ hï¿½lï¿½soï¿½bï¿½lyï¿½ban a festmï¿½ny mï¿½gï¿½tt a kï¿½d 1111
+3.3 Ãœgyfelek a szÃ¡mlÃ¡jukon lÃ©vÅ‘ Ã¶sszeget csak a bankban vagy ATM-eknÃ©l nÃ©zhetik meg.
+3.4  Ãšj szÃ¡mla vagy megtakÃ­tÃ¡sos szÃ¡mla igÃ©nylÃ©se -> csak szemÃ©lyesen, papÃ­r alapÃº regisztrÃ¡lÃ¡s
 
- /// innen folytasd (de lehet jobb ha az elején is igazitgatsz)
 
+4. Igï¿½nyelt ï¿½zleti folyamatok
+4.1  Ãœgyfelek felvitele az adatbï¿½zisba: felhasznÃ¡lÃ³nÃ©v, jelszÃ³.
+4.2 Ãšj szÃ¡mla igï¿½nylï¿½se: regisztrï¿½lt felhasznï¿½lï¿½i belï¿½pï¿½s => "Ãšj szÃ¡mlÃ¡t nyitok fÃ¼l" => 
+4.3 SzÃ¡mlÃ¡k kÃ¶zti utalÃ¡sok -> tranzakciÃ³k logolÃ¡sa, ÃºjrautalÃ¡s lehetÅ‘sÃ©ge
 
-3.1.2. Autó eladása: az ügyvezetõ végzi, füzetben "ELADÁS" bejegyzés => az autó értékesítése
-3.2. Kölcsönzés: telephelyen az ügyvezetõ, vagy jogosult munkatárs végzi, tipikusan 2 lépésben, az 1. lépés opcionális:
-3.2.1. telefonos igénylés esetén => füzetbe foglalás bejegyzése
-3.2.2. telephelyen szerzõdéskötés az ügyféllel => fényképek készítése => füzetben kiadás adminisztrálása
-...
+5. A rendszerre vonatkozï¿½ szabï¿½lyok A web felï¿½let szabvï¿½nyos eszkï¿½zï¿½kkel kï¿½szï¿½ljï¿½n, html/css/javascript. A kï¿½pek jpeg ï¿½s png formï¿½tumï¿½ak lehetnek. A felhasznï¿½lï¿½kat azonosï¿½tï¿½ web oldalak esetï¿½ben szï¿½ksï¿½ges jogszabï¿½lyokat be kell tartani: GDPR, ...
 
-4. Igényelt üzleti folyamatok
-4.1. Online megjelenés
-4.1.1. Autó felvitele az adatbázisba: adminisztrátor jogosultsággal belépés => adminisztráció menü => új autó felvitel menüpont => adatok megadása => véglegesítés
-...
-4.1.6. Autó igénylése: regisztrált felhasználói belépés => autó keresése => kölcsönzési idõtartam megadása => elküldés => email visszajelzés ...
+6. Kï¿½vetelmï¿½nylista
+K01 Kï¿½nnyen ï¿½zemeltethetï¿½ rendszer
+K02 Reszponzï¿½v dizï¿½jn ...
+K03 Hï¿½rom szerepkï¿½r kezelï¿½se (admin, regisztrï¿½lt, vendï¿½g)
 
-5. A rendszerre vonatkozó szabályok A web felület szabványos eszközökkel készüljön, html/css/javascript. A képek jpeg és png formátumúak lehetnek. A felhasználókat azonosító web oldalak esetében szükséges jogszabályokat be kell tartani: GDPR, ...
-
-6. Követelménylista
-K01 Könnyen üzemeltethetõ rendszer
-K02 Reszponzív dizájn ...
-K03 Három szerepkör kezelése (admin, regisztrált, vendég)
-
-7. Fogalomszótár
-Operatív lízing: ...
+7. Fogalomszï¿½tï¿½r
+Operatï¿½v lï¿½zing: ...
 GDPR: ...
