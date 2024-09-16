@@ -27,6 +27,7 @@ Egy teljes mértékben online alkalmazás tervezését és megalakítását rend
 
 <br>
     |   Modul   |   ID  |   Név |   version |   Kifejtés    |
+    |-----------|-------|-------|-----------|---------------|
     |   Jogosultság |   1  |    Bejelentkezés   |   1.0 |   A felhasználó az email címe illetve jelszó párossal bejelentkezhet. Ha az email és jelszó páros nem megfelelő, hibaüzenetet kap. |
     |   Jogosultság    |   2   |   PIN Recovery    |   1.0 |   A felhasználó elfelejtett PIN kód esetén lekérdezheti a PIN kódját. |
     |   Felület |   3   |   Balance Check   |   1.0 |   A felhasználó megnézheti a számláján való összeget.|
