@@ -1,29 +1,41 @@
-Bank applikáció követelményspecifikáció
+# Fejezetek
 
-1. Jelenlegi helyzet:Az OI bankcsorpt egy feltörekvő vállalkozás ami versenyképes kamatokat és nagy fokú biztonságot kínál ügyfelei számára  . Viszont bankunknak jelenleg nincs megfelelő applikációja ugyintézés lebonyolitására.
-   Ez nagyban megnehezíti az ügyfelek számára az ügyintézést ,hiszen jelenleg füzetben és papíron tarjuk nyilván az ügyfelek banki adatait. Ez a helyzet trathatatlan.
+- [Jelenlegi Helyzet](#1-jelenlegi-helyzet)
+- [Vágyálom rendszer](#2-vágyálom-rendszer)
+- [Jelenlegi üzleti folyamatok](#3-jelenlegi-üzleti-folyamatok)
+- [Igényelt üzleti folyamatok](#4-igényelt-üzleti-folyamatok)
+- [rendszer szabályok](#5-rendszerre-vonatkozó-szabályok)
+- [Követelménylista](#6-követelménylista)
 
-2. Vágyálom rendszer Vállalkozásunk bővítése érdekében szeretnénk egy telefonos applikációt készíteni ami nem csak megkönnyíti az ugyintézést hanem biztonságosabbá is teszi azt. Elvárt a platformfüggetlenség ,Nem elfogadható csak Microsoft Windows operációs rendszeren üzemeltethető rendszerre vonatkozó javaslat. Az online megjenés lehetőleg mobil telefonon, tableten is működjön, reszponzív felülettel.
+## 1. Jelenlegi helyzet
+    Az OI bankcsorpt egy feltörekvő vállalkozás ami versenyképes kamatokat és nagy fokú biztonságot kínál ügyfelei számára. Viszont bankunknak jelenleg nincs megfelelő applikációja ügyintézés lebonyolitására.
+    Ez nagyban megnehezíti az ügyfelek számára az ügyintézést ,hiszen jelenleg füzetben és papíron tarjuk nyilván az ügyfelek banki adatait. Ez a helyzet trathatatlan.
 
-3. Jelenlegi üzleti folyamatok
-3.1. Új ugyfél Felvétele a rendszerbe: banki ugyintéző végzi => füzetbe való bejegyzése
-3.2 Számla nyitás banki ugyintéző végzi => füzetbe való bejegyzése, a kézpénz széfben tárolása a főigazgató hálósoábályában a festmény mögött a kód 1111
-3.3 Ügyfelek a számlájukon lévő összeget lekérdezése.
-3.4  Új számla vagy megtakításos számla igénylése -> csak személyesen, papír alapú regisztrálás
+## 2. Vágyálom rendszer
+    Vállalkozásunk bővítése érdekében szeretnénk egy telefonos applikációt készíteni ami nem csak megkönnyíti az ügyintézést hanem biztonságosabbá is teszi azt. Elvárt a platformfüggetlenség, nem elfogadható csak Microsoft Windows operációs rendszeren üzemeltethető rendszerre vonatkozó javaslat. Az online megjenés lehetőleg mobil telefonon, tableten is működjön, reszponzív felülettel.
 
-4. Igényelt üzleti folyamatok
-4.1. Online megjelenés
-4.1.1. Ügyfél felvitele az adatbázisba: felhasználónév, jelszó felvétele az adatbázisba
-4.1.2. Új számla igénylése: regisztrált felhasználói belépés => "Új számla fül" 
+## 3. Jelenlegi üzleti folyamatok
+    3.1. Új ugyfél Felvétele a rendszerbe: banki ugyintéző végzi => füzetbe való bejegyzése
+    3.2 Számla nyitás banki ugyintéző végzi => füzetbe való bejegyzése, a kézpénz széfben tárolása a főigazgató hálósoábályában a festmény mögött a kód 1111
+    3.3 Ügyfelek a számlájukon lévő összeget lekérdezése.
+    3.4  Új számla vagy megtakításos számla igénylése -> csak személyesen, papír alapú regisztrálás
 
-5. A rendszerre vonatkozó szabályok A web felület szabványos eszközökkel készüljön, html/css/javascript. A képek jpeg és png formátumúak lehetnek. A felhasználókat azonosító web oldalak esetében szükséges jogszabályokat be kell tartani: GDPR, ...
+## 4. Igényelt üzleti folyamatok
+    4.1. Online megjelenés
+    4.1.1. Ügyfél felvitele az adatbázisba: felhasználónév, jelszó felvétele az adatbázisba
+    4.1.2. Új számla igénylése: regisztrált felhasználói belépés => "Új számla fül" 
 
-6. Követelménylista
-K01 Könnyen üzemeltethető rendszer
-K02 Reszponzív dizájn ...
-K03 Három szerepkör kezelése (admin, regisztrált, vendég)
-K04 Adatok megfelelő védelme
+## 5. Rendszerre vonatkozó szabályok
+    Az applikácíó pythonban készül. A felhasználók adatait tároló applikációk esetében betartandó szabályok betartása a legfőbb prioritás.
 
-7. Fogalomszótár
-Operatív lízing: ...
-GDPR: ...
+## 6. Követelménylista
+
+   |   Modul   |   ID  |   Név |   version |   Kifejtés    |
+   |:----------|:------|:------|:----------|:--------------|
+   |   Jogosultság |   1  |    Bejelentkezés   |   1.0 |   A felhasználó az email címe illetve jelszó párossal bejelentkezhet. Ha az email és jelszó páros nem megfelelő, hibaüzenetet kap. |
+   |   Jogosultság    |   2   |   PIN Recovery    |   1.0 |   A felhasználó elfelejtett PIN kód esetén lekérdezheti a PIN kódját. |
+   |   Felület |   3   |   Balance Check   |   1.0 |   A felhasználó megnézheti a számláján való összeget.|
+   |   Jogosultság |   4   |   Pénz Transfer   |   1.0 |   A felhasználó online pénzt utalhat más számlákra.   |
+   |   Jogosultság    |   5   |   Pénz Withdraw   |   1.0 |   A felhasználó kikérhet egy kódot, ami megkönnyíti a pénzfelvételt a banki ATM-eknél.    |
+   |   Felület |   6   |   Betéti kamatláb  |   1.0 |---|
+   |   Felület |   7   |   Kamatos kamat számítás  |   1.0 |---|

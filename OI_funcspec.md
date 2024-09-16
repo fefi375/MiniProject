@@ -10,19 +10,17 @@
 - [Képernyőtervek](#képernyőtervek)
 - [Forgatókönyv](#forgatókönyv)
 - [Funkció](#funkció)
-- [Fogalomszótár](#fogalomszótár)
 
 <br>
 
 1. ##  Áttekintés<br>
 
-    <br>A célunk egy egyszerű online banki applikáció létrehozása a bankszámlák kezelésének megkönnyítésére. Az applikációt az adott bank bármely ottani bankszámlával rendelkező felhasználó igénybe veheti. <br><br>
+       A célunk egy egyszerűen kezelhető online banki applikáció létrehozása a bankszámlák kezelésének megkönnyítésére. Az applikációt az adott bank bármely ottani bankszámlával rendelkező felhasználó igénybe veheti.
 
 2. ## Jelenlegi helyzet<br>
-
-    <br>A megrendelő szeretné modernizálni bankja elérhetőségét egy online banki applikációval annak érdekében, hogy lépést tudjon tartani versenytársaival.
-    Egy teljes mértékben online alkalmazás tervezését és megalakítását rendelte meg. Az applikáció segít minden ezen banki számlával rendelkező fogyasztónak a gyors számlakezelésben, beleértve a számlán lévő pénzösszeg megtekintését, a pénzfelvétel esetén előre megszabott összeghez egyedi kód generálás ATM-es pénzfelvétel megkönnyítése érdekében, pénzáutalás, kamatos kamatszámítás.<br><br>
-
+       Az OI bankcsorpt egy feltörekvő vállalkozás ami versenyképes kamatokat és nagy fokú biztonságot kínál ügyfelei számára. Viszont bankunknak jelenleg nincs megfelelő applikációja ügyintézés lebonyolitására.
+       Ez nagyban megnehezíti az ügyfelek számára az ügyintézést ,hiszen jelenleg füzetben és papíron tarjuk nyilván az ügyfelek banki adatait. Ez a helyzet trathatatlan.
+        
 3. ## Követelménylista<br>
 
 
@@ -37,23 +35,26 @@
     |   Felület |   7   |   Kamatos kamat számítás  |   1.0 |---|
 
 
-<br><br>
+<br>
 
-4. ## Jelenlegi üzleti folyamatok modellje<br><br>
+4. ## Jelenlegi üzleti folyamatok modellje
+       3.1. Új ugyfél Felvétele a rendszerbe: banki ugyintéző végzi => füzetbe való bejegyzése
+       3.2 Számla nyitás banki ugyintéző végzi => füzetbe való bejegyzése, a kézpénz széfben tárolása a főigazgató hálósoábályában a festmény mögött a kód 1111
+       3.3 Ügyfelek a számlájukon lévő összeget lekérdezése.
+       3.4  Új számla vagy megtakításos számla igénylése -> csak személyesen, papír      alapú regisztrálás
+5. ## Igényelt üzleti folyamatok modellje
+       4.1. Online megjelenés
+       4.1.1. Ügyfél felvitele az adatbázisba: felhasználónév, jelszó felvétele az adatbázisba
+       4.1.2. Új számla igénylése: regisztrált felhasználói belépés => "Új számla fül" 
+6. ## Használati esetek
 
-5. ## Igényelt üzleti folyamatok modellje<br><br>
+7. ## Megfeleltetés
 
-6. ## Használati esetek<br><br>
+8. ## Képernyőtervek
 
-7. ## Megfeleltetés<br><br>
+9. ## Forgatókönyv
 
-8. ## Képernyőtervek<br><br>
+       A felhasználó számlanyitás után, esetleg számlanyitás közben egyből regisztrálhat a felületen. Bejelentkezést követően hozzájut saját bankszámlaadataihoz, beleértve számlaszámát és a számlán lévő pénzösszeg mennyiségét. Számlájára nyomva elérheti a pénzátutalás illetve pénzfelvételhez való kódgenerálást.
+    
 
-9. ## Forgatókönyv<br>
-
-    <br>A felhasználó számlanyitás után, esetleg számlanyitás közben egyből regisztrálhat a felületen. Bejelentkezést követően hozzájut saját bankszámlaadataihoz, beleértve számlaszámát és a számlán lévő pénzösszeg mennyiségét. Számlájára nyomva elérheti a pénzátutalás illetve pénzfelvételhez való kódgenerálást.
-    <br><br>
-
-10. ## Funkció<br><br>
-
-11. ## Fogalomszótár<br><br>
+10. ## Funkció
