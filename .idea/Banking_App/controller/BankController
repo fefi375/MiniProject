@@ -1,9 +1,10 @@
+from ..model.Account import Account
 class BankController:
     def __init__(self):
-        self.accounts = {}  # Stores accounts with account holder's name as the key
+        self.accounts = {}  # fiokokat tárollya a név a kulcs
     
     def menu(self):
-        """Displays the main menu for banking operations."""
+        # főmenu ebből később grafikus lesz
         while True:
             print("\n--- Banking Menu ---")
             print("1. Create a new account")
@@ -79,7 +80,3 @@ class BankController:
         else:
             print("Account not found.")
 
-# Create a BankController instance and start the menu
-if __name__ == "__main__":
-    bank_controller = BankController()
-    bank_controller.menu()
