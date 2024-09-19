@@ -37,7 +37,7 @@ class Account:
 
     @classmethod
     def create_account(cls):
-        #felhasználói adatok bekérése
+        """felhasználói adatok bekérése"""
         first_name = input("Enter the first name: ")
         last_name = input("Enter the last name: ")
         pin_code = input("Set a 4-digit pin code: ")

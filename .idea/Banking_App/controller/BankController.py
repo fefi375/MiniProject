@@ -1,36 +1,45 @@
-from ..model.Account import Account
+from Banking_App.model.Account import Account
 class BankController:
     def __init__(self):
-        self.accounts = {}  # fiokokat tárollya a név a kulcs
-    
-    def menu(self):
-        # főmenu ebből később grafikus lesz
+        self.accounts = {}  # fiókok listalya
+        self.logged_in_account = None  # bejelentkezett fiók
+
+    def main_menu(self):
+        """fő login menu"""
         while True:
-            print("\n--- Banking Menu ---")
-            print("1. Create a new account")
-            print("2. Deposit money")
-            print("3. Withdraw money")
-            print("4. Check balance")
-            print("5. Exit")
+            print("\n--- Welcome to the Banking System ---")
+            print("1. Log in to an existing account")
+            print("2. Create a new account")
+            print("3. Exit")
             
-            choice = input("Choose an option (1-5): ")
+            choice = input("Choose an option (1-3): ")
             
             if choice == '1':
-                self.create_account()
+                self.login()
             elif choice == '2':
-                self.deposit_money()
+                self.create_account()
             elif choice == '3':
-                self.withdraw_money()
-            elif choice == '4':
-                self.check_balance()
-            elif choice == '5':
-                print("Exiting the banking app.")
+                print("Exiting the banking system.")
                 break
             else:
                 print("Invalid option. Please choose a valid option.")
-    
+
+    def login(self):
+        """bejelentkeztető"""
+        account_holder = input("Enter the account holder's name: ")
+        if account_holder in self.accounts:
+            pin_code = input("Enter your 4-digit pin code: ")
+            if pin_code == self.accounts[account_holder]._pin_code:
+                print(f"Welcome, {account_holder}!")
+                self.logged_in_account = self.accounts[account_holder]
+                self.account_menu()  # Go to account menu after login
+            else:
+                print("Incorrect pin code. Please try again.")
+        else:
+            print("Account not found.")
+
     def create_account(self):
-        """Creates a new account and stores it in the accounts dictionary."""
+        """új fiók létrehozása."""
         account = Account.create_account()
         account_holder = account.first_name + " " + account.last_name
         
@@ -39,44 +48,50 @@ class BankController:
         else:
             self.accounts[account_holder] = account
             print(f"Account for {account_holder} created successfully.")
+            self.logged_in_account = account
+            self.account_menu()  # auto belépés miután kész az acc
+
+    def account_menu(self):
+        """bejelentkezés utáni menu"""
+        while True:
+            print("\n--- Account Menu ---")
+            print(f"Logged in as: {self.logged_in_account.first_name} {self.logged_in_account.last_name}")
+            print("1. Deposit money")
+            print("2. Withdraw money")
+            print("3. Check balance")
+            print("4. Log out")
+            
+            choice = input("Choose an option (1-4): ")
+            
+            if choice == '1':
+                self.logged_in_account.deposit(float(input("Enter the amount to deposit: ")))
+            elif choice == '2':
+                self.logged_in_account.withdraw(float(input("Enter the amount to withdraw: ")))
+            elif choice == '3':
+                self.check_balance()
+            elif choice == '4':
+                print(f"Logging out {self.logged_in_account.first_name} {self.logged_in_account.last_name}.")
+                self.logged_in_account = None
+                break
+            else:
+                print("Invalid option. Please choose a valid option.")
     
-    def deposit_money(self):
-        """Deposits money into an existing account."""
-        account_holder = input("Enter the account holder's name: ")
-        if account_holder in self.accounts:
-            try:
-                amount = float(input("Enter the amount to deposit: "))
-                self.accounts[account_holder].deposit(amount)
-                print(f"${amount:.2f} deposited successfully.")
-            except ValueError:
-                print("Invalid amount. Please enter a numeric value.")
-        else:
-            print("Account not found.")
-    
+   
     def withdraw_money(self):
-        """Withdraws money from an existing account if the pin code is correct."""
-        account_holder = input("Enter the account holder's name: ")
-        if account_holder in self.accounts:
-            pin_code = input("Enter your 4-digit pin code: ")
-            try:
-                amount = float(input("Enter the amount to withdraw: "))
-                self.accounts[account_holder].withdraw(amount, pin_code)
-                print(f"${amount:.2f} withdrawn successfully.")
-            except ValueError as e:
-                print(e)
-        else:
-            print("Account not found.")
+        """Withdraws money from the logged-in account."""
+        pin_code = input("Enter your 4-digit pin code: ")
+        try:
+            amount = float(input("Enter the amount to withdraw: "))
+            self.logged_in_account.withdraw(amount, pin_code)
+            print(f"${amount:.2f} withdrawn successfully.")
+        except ValueError as e:
+            print(e)
     
     def check_balance(self):
-        """Checks the balance of an existing account if the pin code is correct."""
-        account_holder = input("Enter the account holder's name: ")
-        if account_holder in self.accounts:
-            pin_code = input("Enter your 4-digit pin code: ")
-            try:
-                balance = self.accounts[account_holder].get_balance(pin_code)
-                print(f"Current balance: ${balance:.2f}")
-            except ValueError as e:
-                print(e)
-        else:
-            print("Account not found.")
-
+        """Checks the balance of the logged-in account."""
+        pin_code = input("Enter your 4-digit pin code: ")
+        try:
+            balance = self.logged_in_account.get_balance(pin_code)
+            print(f"Current balance: ${balance:.2f}")
+        except ValueError as e:
+            print(e)
