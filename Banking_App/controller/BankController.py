@@ -65,33 +65,15 @@ class BankController:
             
             if choice == '1':
                 self.logged_in_account.deposit(float(input("Enter the amount to deposit: ")))
+                print(f" withdrawn successfully.")
             elif choice == '2':
                 self.logged_in_account.withdraw(float(input("Enter the amount to withdraw: ")))
             elif choice == '3':
-                self.check_balance()
+                balance = self.logged_in_account.get_balance()
+                print(f"Current balance: ${balance:.2f}")
             elif choice == '4':
                 print(f"Logging out {self.logged_in_account.first_name} {self.logged_in_account.last_name}.")
                 self.logged_in_account = None
                 break
             else:
                 print("Invalid option. Please choose a valid option.")
-    
-   
-    def withdraw_money(self):
-        """Withdraws money from the logged-in account."""
-        pin_code = input("Enter your 4-digit pin code: ")
-        try:
-            amount = float(input("Enter the amount to withdraw: "))
-            self.logged_in_account.withdraw(amount, pin_code)
-            print(f"${amount:.2f} withdrawn successfully.")
-        except ValueError as e:
-            print(e)
-    
-    def check_balance(self):
-        """Checks the balance of the logged-in account."""
-        pin_code = input("Enter your 4-digit pin code: ")
-        try:
-            balance = self.logged_in_account.get_balance(pin_code)
-            print(f"Current balance: ${balance:.2f}")
-        except ValueError as e:
-            print(e)

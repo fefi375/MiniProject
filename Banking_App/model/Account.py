@@ -12,10 +12,8 @@ class Account:
         else:
             raise ValueError("Amount must be greater than 0.")
     
-    def withdraw(self,pin_code: str,amount: float):
+    def withdraw(self,amount: float):
         #pénz levétel a számláról
-        if pin_code != self._pin_code:
-            raise ValueError("Invalid pin code.")
         if amount > self.balance:
             raise ValueError("Insufficient funds.")
         if amount <= 0:
@@ -23,12 +21,9 @@ class Account:
         
         self.balance -= amount
     
-    def get_balance(self, pin_code: str):
+    def get_balance(self):
         # vissza adja a jelenlegi összeget a számlán ha helyes a pin code
-        if pin_code == self._pin_code:
             return self.balance
-        else:
-            raise ValueError("Invalid pin code.")
     
     def get_account_info(self):
         # visszad stringet ami tartalmazza a felhasznaló nevét és a számlán lévő összeget
