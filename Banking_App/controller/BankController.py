@@ -22,7 +22,7 @@ class BankController:
                     accounts[account_holder] = account
                 return accounts
         return {}  # Üres szótárt ad vissza, ha nem létezik a fájl
-
+        # asd
     def save_accounts(self):
         """elmenti JSON-ba az accountokat"""
         accounts_data = [
