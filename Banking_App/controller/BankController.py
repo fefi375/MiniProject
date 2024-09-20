@@ -4,7 +4,8 @@ import os
 
 class BankController:
     def __init__(self):
-        self.file_path='accounts.json'
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self.file_path=os.path.join(base_dir, 'accounts.json')
         self.accounts = {} # szótárként való inicializálás miatt (biztonság kedvéért)
         self.accounts=self.load_accounts() # fiókok listalya
         self.logged_in_account = None  # bejelentkezett fiók
