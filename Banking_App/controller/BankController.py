@@ -1,8 +1,25 @@
 from Banking_App.model.Account import Account
+import json
+import os
+
 class BankController:
     def __init__(self):
-        self.accounts = {}  # fiókok listalya
+        self.file_path='accounts.json'
+        self.accounts=self.load_accounts() # fiókok listalya
         self.logged_in_account = None  # bejelentkezett fiók
+
+    def load_accounts(self):
+        """betölti az accountokat JSON-ból"""
+        if os.path.exists(self.file_path):
+            with open(self.file_path, 'r') as file:
+                return json.load(file)
+        return {}  # Return an empty dictionary if file doesn't exist
+
+    def save_accounts(self):
+        """elmenti JSON-ba az accountokat"""
+        with open(self.file_path, 'w') as file:
+            json.dump(self.accounts, file, indent=4)
+
 
     def main_menu(self):
         """fő login menu"""
@@ -50,6 +67,8 @@ class BankController:
             print(f"Account for {account_holder} created successfully.")
             self.logged_in_account = account
             self.account_menu()  # auto belépés miután kész az acc
+            self.save_accounts()
+        
 
     def account_menu(self):
         """bejelentkezés utáni menu"""
