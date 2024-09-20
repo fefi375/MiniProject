@@ -137,10 +137,12 @@ class BankingAppGUI:
                 new_account = Account(first_name, last_name, pin_code, balance)
                 self.controller.accounts[account_holder] = new_account
                 messagebox.showinfo("Success", f"Account for {account_holder} created successfully.")
+                self.controller.save_accounts()
                 self.controller.logged_in_account = new_account
                 self.banking_dashboard()
             except ValueError:
                 messagebox.showerror("Error", "Invalid balance amount")
+
 
     def deposit(self):
         """feltöltés loigka"""

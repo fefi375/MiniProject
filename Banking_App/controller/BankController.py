@@ -5,6 +5,7 @@ import os
 class BankController:
     def __init__(self):
         self.file_path='accounts.json'
+        self.accounts = {} # szótárként való inicializálás miatt (biztonság kedvéért)
         self.accounts=self.load_accounts() # fiókok listalya
         self.logged_in_account = None  # bejelentkezett fiók
 
@@ -12,13 +13,30 @@ class BankController:
         """betölti az accountokat JSON-ból"""
         if os.path.exists(self.file_path):
             with open(self.file_path, 'r') as file:
-                return json.load(file)
-        return {}  # Return an empty dictionary if file doesn't exist
+                accounts_data = json.load(file)
+                # Account objektumok visszakonvertálása
+                accounts = {}
+                for data in accounts_data:
+                    account = Account(data['first_name'], data['last_name'], data['pin_code'], data['balance'])
+                    account_holder = f"{data['first_name']} {data['last_name']}"
+                    accounts[account_holder] = account
+                return accounts
+        return {}  # Üres szótárt ad vissza, ha nem létezik a fájl
 
     def save_accounts(self):
         """elmenti JSON-ba az accountokat"""
+        accounts_data = [
+            {
+                'first_name': account.first_name,
+                'last_name': account.last_name,
+                'pin_code': account._pin_code,  # Szükség esetén biztosítjuk a megfelelő jelszó kezelést
+                'balance': account.balance,
+            }
+            for account in self.accounts.values()
+        ]
+
         with open(self.file_path, 'w') as file:
-            json.dump(self.accounts, file, indent=4)
+            json.dump(accounts_data, file, indent=4)
 
 
     def main_menu(self):
@@ -59,7 +77,7 @@ class BankController:
         """új fiók létrehozása."""
         account = Account.create_account()
         account_holder = account.first_name + " " + account.last_name
-        
+
         if account_holder in self.accounts:
             print("An account with this name already exists.")
         else:
