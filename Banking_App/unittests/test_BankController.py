@@ -32,3 +32,29 @@ class TestBankController(unittest.TestCase):
         self.assertEqual(len(bank_controller.accounts), 2, "There should be 2 accounts loaded.")
         self.assertTrue("John Doe" in bank_controller.accounts, "John Doe's account should be loaded.")
         self.assertTrue("Jane Smith" in bank_controller.accounts, "Jane Smith's account should be loaded.")
+
+    @patch('builtins.open', new_callable=mock_open)
+    def test_save_accounts(self, mock_open_file):
+        """Fiók mentése JSON-re teszt."""
+        bank_controller = BankController()
+        
+        # manuálisan létrehozott fiók
+        account = MagicMock()
+        account.first_name = "John"
+        account.last_name = "Doe"
+        account._pin_code = "1234"
+        account.balance = 1000
+        bank_controller.accounts = {"John Doe": account}
+        
+        bank_controller.save_accounts()
+        
+        # meggyőződünk hogy megfelelő adat íródott a JSON fileba
+        expected_data = [
+            {
+                'first_name': "John",
+                'last_name': "Doe",
+                'pin_code': "1234",
+                'balance': 1000,
+            }
+        ]
+        mock_open_file().write.assert_called_once_with(json.dumps(expected_data, indent=4))         
