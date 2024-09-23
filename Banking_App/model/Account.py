@@ -33,8 +33,8 @@ class Account:
     @classmethod
     def create_account(cls):
         """felhasználói adatok bekérése"""
-        first_name = input("Enter the first name: ")
-        last_name = input("Enter the last name: ")
+        first_name = input("Enter the first name: ").strip().lower()
+        last_name = input("Enter the last name: ").strip().lower()
         pin_code = input("Set a 4-digit pin code: ")
         
         # csakis 4 számjegy elfogadható pin kódként

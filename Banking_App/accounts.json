@@ -10,5 +10,17 @@
         "last_name": "jozsef",
         "pin_code": "7496",
         "balance": 50000.0
+    },
+    {
+        "first_name": "fefi",
+        "last_name": "ferenc",
+        "pin_code": "1234",
+        "balance": 10.0
+    },
+    {
+        "first_name": "fefi",
+        "last_name": "veress",
+        "pin_code": "1234",
+        "balance": 50.0
     }
 ]

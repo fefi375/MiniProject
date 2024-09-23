@@ -28,8 +28,8 @@ class BankController:
         """elmenti JSON-ba az accountokat"""
         accounts_data = [
             {
-                'first_name': account.first_name,
-                'last_name': account.last_name,
+                'first_name': account.first_name.strip().lower(),
+                'last_name': account.last_name.strip().lower(),
                 'pin_code': account._pin_code,  # Szükség esetén biztosítjuk a megfelelő jelszó kezelést
                 'balance': account.balance,
             }
@@ -62,7 +62,7 @@ class BankController:
 
     def login(self):
         """bejelentkeztető"""
-        account_holder = input("Enter the account holder's name: ")
+        account_holder = input("Enter the account holder's name: ").strip().lower()
         if account_holder in self.accounts:
             pin_code = input("Enter your 4-digit pin code: ")
             if pin_code == self.accounts[account_holder]._pin_code:
