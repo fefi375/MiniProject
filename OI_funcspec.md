@@ -47,7 +47,7 @@
        4.1.1. Ügyfél felvitele az adatbázisba: felhasználónév, jelszó felvétele az adatbázisba
        4.1.2. Új számla igénylése: regisztrált felhasználói belépés => "Új számla fül" 
 6. ## Használati esetek
-      Világszerte bármely bankcsoport hasznára lehet felhasználók nyílvántartására és tranzakciók lebonyolítására. Az ügyfelek számára magas fokú kényelmet biztosít hiszen mobil eszközükről bárhonnan intézhetik banki ugyeiket mint a pénz feltöltés számlára , pénz felvétele számláról valamint számlán lévő összeg lekérdezése
+      Világszerte bármely bankcsoport hasznára lehet felhasználók nyílvántartására és tranzakciók lebonyolítására. Az ügyfelek számára magas fokú kényelmet biztosít hiszen mobil eszközükről bárhonnan intézhetik banki ugyeiket mint a pénz feltöltés számlára , pénz felvétele számláról valamint számlán lévő összeg lekérdezése.
       
 7. ## Megfeleltetés
 
