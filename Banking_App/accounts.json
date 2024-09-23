@@ -4,5 +4,11 @@
         "last_name": "dsa",
         "pin_code": "1234",
         "balance": 1234.0
+    },
+    {
+        "first_name": "veress",
+        "last_name": "jozsef",
+        "pin_code": "7496",
+        "balance": 50000.0
     }
 ]
