@@ -57,4 +57,69 @@ class TestBankController(unittest.TestCase):
                 'balance': 1000,
             }
         ]
-        mock_open_file().write.assert_called_once_with(json.dumps(expected_data, indent=4))         
+        mock_open_file().write.assert_called_once_with(json.dumps(expected_data, indent=4))   
+
+
+    @patch('builtins.input', side_effect=['John Doe', '1234'])
+    @patch('Banking_App.model.Account')
+    def test_login_successful(self, mock_account_class, mock_input):
+        """Sikeres bejelentkezés tezstelése."""
+        account = MagicMock()
+        account._pin_code = "1234"
+        bank_controller = BankController()
+        bank_controller.accounts = {"John Doe": account}
+        
+        bank_controller.login()
+
+        # megnézzük hogy jelenleg bejelentkeztetett fiók az aminek lennie kell
+        self.assertEqual(bank_controller.logged_in_account, account, "Login should set the correct account.")
+
+    @patch('builtins.input', side_effect=['John Doe', '0000'])
+    @patch('Banking_App.model.Account')
+    def test_login_wrong_pin(self, mock_account_class, mock_input):
+        """Hibás pin eseten elbukás tesztelése."""
+        account = MagicMock()
+        account._pin_code = "1234"
+        bank_controller = BankController()
+        bank_controller.accounts = {"John Doe": account}
+        
+        with patch('builtins.print') as mock_print:
+            bank_controller.login()
+
+            # ellenőrizzük hogy felhasználó látja e a hiba üzenetet
+            mock_print.assert_any_call("Incorrect pin code. Please try again.")
+            self.assertIsNone(bank_controller.logged_in_account, "Login should fail and not set any account.")
+
+    @patch('builtins.input', side_effect=['Jane Doe', '0000'])
+    def test_login_account_not_found(self, mock_input):
+        """Teszt arra az esetre ha a fiók nem található."""
+        bank_controller = BankController()
+        bank_controller.accounts = {"John Doe": MagicMock()}
+
+        with patch('builtins.print') as mock_print:
+            bank_controller.login()
+
+            # ellenőrizzük hogy felhasználó látja e a hiba üzenetet
+            mock_print.assert_any_call("Account not found.")
+            self.assertIsNone(bank_controller.logged_in_account, "Login should fail when account is not found.")
+
+    @patch('builtins.input', side_effect=['Jane', 'Doe'])
+    @patch('Banking_App.model.Account.create_account')
+    def test_create_account(self, mock_create_account, mock_input):
+        """Új fiók létrehozás teszt."""
+        mock_account_instance = MagicMock()
+        mock_create_account.return_value = mock_account_instance
+        mock_account_instance.first_name = 'Jane'
+        mock_account_instance.last_name = 'Doe'
+
+        bank_controller = BankController()
+        with patch('builtins.print') as mock_print:
+            bank_controller.create_account()
+
+            # megvizsgáljuk hogy tényleg létrejött e a fiók
+            account_holder = 'Jane Doe'
+            self.assertTrue(account_holder in bank_controller.accounts, "New account should be added.")
+            mock_print.assert_any_call(f"Account for {account_holder} created successfully.")
+
+if __name__ == '__main__':
+    unittest.main()      
