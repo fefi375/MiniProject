@@ -47,7 +47,8 @@
        4.1.1. Ügyfél felvitele az adatbázisba: felhasználónév, jelszó felvétele az adatbázisba
        4.1.2. Új számla igénylése: regisztrált felhasználói belépés => "Új számla fül" 
 6. ## Használati esetek
-
+      Világszerte bármely bankcsoport hasznára lehet felhasználók nyílvántartására és tranzakciók lebonyolítására. Az ügyfelek számára magas fokú kényelmet biztosít hiszen mobil eszközükről bárhonnan intézhetik banki ugyeiket mint a pénz feltöltés számlára , pénz felvétele számláról valamint számlán lévő összeg lekérdezése
+      
 7. ## Megfeleltetés
 
 8. ## Képernyőtervek
@@ -58,3 +59,11 @@
     
 
 10. ## Funkció
+      
+      Új fiók létrehozása amit egy JSON fájlba ment az applikáció ezzel megőrizve a fiókokat programfuttatások között
+      Fiók létrehozásakor a program odafigyel hogy pin codenak csakis 4 számjegyet fogadjon el ezeket beiráskor * karakter mögé relyti ezzel is védve a pin code titkosságát
+      Fiók létrehozása után automatikusan bejelentkezteti az applikáció és előhozza a menüt ami lehetővé teszi a felhasználó számára a további funkciók elérését.
+      Pénz felvételt tesz lehetővé az applikáció, egy összeget kér be ha az összeg tobb mint a számlán lévő összeg akkor figyelmezteti afelhasználót, ha az összeg megfelelő akkor azt leveszi a számláról.
+      Pénz feltöltésére is képes, szintén egy összget kér be amit azután hozzáad a jelenlegi számlán lévő összeghez.
+      Összeg lekérdezése opció pedig megjeleníti a jelenleg számlán lévő összeget.
+      Végül a bejelentkezett felhasználónak lehetősége van kijelentkezni ami a kezdő menube viszi ahonna fiókot lehet létrehozni vagy bejelentkezni másik fiókba.
