@@ -15,11 +15,13 @@
 
 # 1. Áttekintés
 
-   A célunk egy egyszerűen kezelhető banki applikáció létrehozása a bankszámlák kezelésének megkönnyítésére. <br> Az applikációt az adott bank bármely ottani bankszámlával rendelkező felhasználó igénybe veheti. <br> Az applikációban a felhasználó megtekintheti a számláján lévő összeget, levehet illetve feltölthet számlájára pénzt.
+- A célunk egy egyszerűen kezelhető banki applikáció létrehozása a bankszámlák kezelésének megkönnyítésére.
+- Az applikációt az adott bank bármely ottani bankszámlával rendelkező felhasználó igénybe veheti.
+- Az applikációban a felhasználó megtekintheti a számláján lévő összeget, levehet illetve feltölthet számlájára pénzt.
 
 # 2. Jelenlegi helyzet
 
- Az OI bankcsoport egy feltörekvő vállalkozás ami versenyképes kamatokat és nagy fokú biztonságot kínál ügyfelei számára.<br> Viszont bankunknak jelenleg nincs megfelelő applikációja ügyintézések lebonyolitására.<br> Ez nagyban megnehezíti az ügyfelek számára az ügyintézést, hiszen jelenleg füzetben és papíron tarjuk nyilván az ügyfelek banki adatait. Ez a helyzet trathatatlan.<br> Ennek érdekében készítünk jelenleg egy applikációt, aminek segítségével a bankunkhoz tartozó ügyfelek online is lebonyolíthatják fontosabb ügyeiket.<br> Ide tartozik a számlán lévő pénzlekérdezés, a pénzfeltöltés illetve levétel.
+Az OI bankcsoport egy feltörekvő vállalkozás ami versenyképes kamatokat és nagy fokú biztonságot kínál ügyfelei számára.<br> Viszont bankunknak jelenleg nincs megfelelő applikációja ügyintézések lebonyolitására.<br> Ez nagyban megnehezíti az ügyfelek számára az ügyintézést, hiszen jelenleg füzetben és papíron tarjuk nyilván az ügyfelek banki adatait. Ez a helyzet trathatatlan.<br> Ennek érdekében készítünk jelenleg egy applikációt, aminek segítségével a bankunkhoz tartozó ügyfelek online is lebonyolíthatják fontosabb ügyeiket.<br> Ide tartozik a számlán lévő pénzlekérdezés, a pénzfeltöltés illetve levétel.
         
 # 3. Követelménylista
 
@@ -59,14 +61,14 @@
 
 # 9. Forgatókönyv
 
-  A felhasználó számlanyitás után, esetleg számlanyitás közben egyből regisztrálhat a felületen.<br> Bejelentkezést követően hozzájut saját bankszámlaadataihoz, beleértve számlaszámát és a számlán lévő pénzösszeg mennyiségét.<br> Számlájára nyomva elérheti a pénzátutalás illetve pénzfelvételhez való kódgenerálást.
+A felhasználó számlanyitás után, esetleg számlanyitás közben egyből regisztrálhat a felületen.<br> Bejelentkezést követően hozzájut saját bankszámlaadataihoz, beleértve számlaszámát és a számlán lévő pénzösszeg mennyiségét.<br> Számlájára nyomva elérheti a pénzátutalás illetve pénzfelvételhez való kódgenerálást.
     
 
 # 10. Funkció
 -    Új fiók létrehozása amit egy JSON fájlba ment az applikáció ezzel megőrizve a fiókokat programfuttatások között
--    Fiók létrehozásakor a program odafigyel hogy pin codenak csakis 4 számjegyet fogadjon el ezeket beiráskor * karakter mögé relyti ezzel is védve a pin code titkosságát
+-    Fiók létrehozásakor a program odafigyel hogy pin codenak csakis 4 számjegyet fogadjon el ezeket beiráskor * karakter mögé rejti ezzel is védve a pin code titkosságát
 -    Fiók létrehozása után automatikusan bejelentkezteti az applikáció és előhozza a menüt ami lehetővé teszi a felhasználó számára a további funkciók elérését.
--    Pénz felvételt tesz lehetővé az applikáció, egy összeget kér be ha az összeg tobb mint a számlán lévő összeg akkor figyelmezteti afelhasználót, ha az összeg megfelelő akkor azt leveszi a számláról.
+-    Pénz felvételt tesz lehetővé az applikáció, egy összeget kér be ha az összeg több mint a számlán lévő összeg akkor figyelmezteti a felhasználót, ha az összeg megfelelő akkor azt leveszi a számláról.
 -    Pénz feltöltésére is képes, szintén egy összget kér be amit azután hozzáad a jelenlegi számlán lévő összeghez.
 -    Összeg lekérdezése opció pedig megjeleníti a jelenleg számlán lévő összeget.
 -    Végül a bejelentkezett felhasználónak lehetősége van kijelentkezni ami a kezdő menube viszi ahonna fiókot lehet létrehozni vagy bejelentkezni másik fiókba.

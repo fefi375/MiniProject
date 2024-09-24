@@ -8,10 +8,10 @@
 - [Követelménylista](#6-követelménylista)
 
 # 1. Jelenlegi helyzet
- Az OI bankcsoport egy feltörekvő vállalkozás ami versenyképes kamatokat és nagy fokú biztonságot kínál ügyfelei számára.<br> Viszont bankunknak jelenleg nincs megfelelő applikációja ügyintézések lebonyolitására.<br> Ez nagyban megnehezíti az ügyfelek számára az ügyintézést, hiszen jelenleg füzetben és papíron tarjuk nyilván az ügyfelek banki adatait. Ez a helyzet trathatatlan.<br> Ennek érdekében készítünk jelenleg egy applikációt, aminek segítségével a bankunkhoz tartozó ügyfelek online is lebonyolíthatják fontosabb ügyeiket.<br> Ide tartozik a számlán lévő pénzlekérdezés, a pénzfeltöltés illetve levétel.
+Az OI bankcsoport egy feltörekvő vállalkozás ami versenyképes kamatokat és nagy fokú biztonságot kínál ügyfelei számára.<br> Viszont bankunknak jelenleg nincs megfelelő applikációja ügyintézések lebonyolitására.<br> Ez nagyban megnehezíti az ügyfelek számára az ügyintézést, hiszen jelenleg füzetben és papíron tarjuk nyilván az ügyfelek banki adatait. Ez a helyzet trathatatlan.<br> Ennek érdekében készítünk jelenleg egy applikációt, aminek segítségével a bankunkhoz tartozó ügyfelek online is lebonyolíthatják fontosabb ügyeiket.<br> Ide tartozik a számlán lévő pénzlekérdezés, a pénzfeltöltés illetve levétel.
 
 # 2. Vágyálom rendszer
- Vállalkozásunk bővítése érdekében szeretnénk egy applikációt készíteni ami nem csak megkönnyíti az ügyintézést hanem biztonságosabbá is teszi azt.<br> Elvárt a platformfüggetlenség, nem elfogadható csak Microsoft Windows operációs rendszeren üzemeltethető rendszerre vonatkozó javaslat.<br> Bankszámlanyitás után egyből regisztrálni lehet az applikációban. Ezután belépés után a felhasználó lekérdezheti a számlán lévő pénzmennyiséget, ezen kívül tölthet fel számlájára és vehet le róla pénzt.<br> 
+Vállalkozásunk bővítése érdekében szeretnénk egy applikációt készíteni ami nem csak megkönnyíti az ügyintézést hanem biztonságosabbá is teszi azt.<br> Elvárt a platformfüggetlenség, nem elfogadható csak Microsoft Windows operációs rendszeren üzemeltethető rendszerre vonatkozó javaslat.<br> Bankszámlanyitás után egyből regisztrálni lehet az applikációban. Ezután belépés után a felhasználó lekérdezheti a számlán lévő pénzmennyiséget, ezen kívül tölthet fel számlájára és vehet le róla pénzt.<br> 
 
 # 3. Jelenlegi üzleti folyamatok
 -   3.1. Új ügyfél Felvétele a rendszerbe: banki ugyintéző végzi => füzetbe való bejegyzése
@@ -28,8 +28,10 @@
 -    4.1.5. Applikációs pénzfeltöltés
 
 # 5. Rendszerre vonatkozó szabályok
-   Az applikácíó pythonban készül. A felhasználók adatait tároló applikációk esetében betartandó szabályok betartása a legfőbb prioritás.<br>
-   Az egyéni számlákhoz egy alkalmazott sem fér hozzá, emiatt PIN kód elfelejtése során a felhasználónak kötelező PIN kódot cserélnie, amihez személyazonosság bizonyítása szükséges.<br> 
+- Az applikácíó pythonban készül.
+- A felhasználók adatait tároló applikációk esetében betartandó szabályok betartása a legfőbb prioritás.
+- Az egyéni számlákhoz egy alkalmazott sem fér hozzá
+- PIN kód elfelejtése során a felhasználónak kötelező PIN kódot cserélnie, amihez személyazonosság bizonyítása szükséges.
 
 # 6. Követelménylista
 
