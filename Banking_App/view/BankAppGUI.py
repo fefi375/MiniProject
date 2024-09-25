@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import messagebox
 from Banking_App.model.Account import Account
 from Banking_App.controller.BankController import BankController
+import random
+import os
 
 class BankingAppGUI:
     def __init__(self, master):
@@ -10,8 +12,8 @@ class BankingAppGUI:
         self.master.geometry("400x300")  # ablakméret
         self.master.resizable(False, False)  # nem lehet átméretezni
         self.controller = BankController()
-
         self.main_menu()
+
 
     def main_menu(self):
         """Fő menü"""
@@ -20,10 +22,10 @@ class BankingAppGUI:
         frame = tk.Frame(self.master)
         frame.place(relx=0.5, rely=0.5, anchor="center")  # középső frame
 
-        tk.Label(frame, text="Welcome to the Banking App", font=("Arial", 16, "bold")).grid(row=0, column=0, columnspan=2, pady=20)
+        tk.Label(frame, text="Welcome to the OI Banking App", font=("Verdana", 16, "bold")).grid(row=0, column=0, columnspan=2, pady=20)
 
-        tk.Button(frame, text="Log in", command=self.login_screen, width=15, height=2).grid(row=1, column=0, pady=10)
-        tk.Button(frame, text="Create Account", command=self.create_account_screen, width=15, height=2).grid(row=2, column=0, pady=10)
+        tk.Button(frame, text="Log in", font=("Helvecita", 9, "bold"), command=self.login_screen, width=15, height=2).grid(columnspan=3, pady=10)
+        tk.Button(frame, text="Create Account", font=("Helvecita", 9, "bold"), command=self.create_account_screen, width=15, height=2).grid(columnspan=3)
 
     def login_screen(self):
         """Bejelentkezési menü"""
@@ -32,18 +34,18 @@ class BankingAppGUI:
         frame = tk.Frame(self.master)
         frame.place(relx=0.5, rely=0.5, anchor="center")  # középső frame
 
-        tk.Label(frame, text="Login", font=("Arial", 14)).grid(row=0, column=0, columnspan=2, pady=20)
+        tk.Label(frame, text="Login", font=("Verdana", 14, "bold")).grid(row=0, column=0, columnspan=2, pady=20)
 
-        tk.Label(frame, text="Account Holder:").grid(row=1, column=0, padx=10, pady=5, sticky="e")
-        tk.Label(frame, text="Pin Code:").grid(row=2, column=0, padx=10, pady=5, sticky="e")
+        tk.Label(frame, text="Account Holder:", font=("Helvecita", 10)).grid(row=1, column=0, padx=10, pady=5, sticky="e")
+        tk.Label(frame, text="Pin Code:", font=("Helvecita", 10)).grid(row=2, column=0, padx=10, pady=5, sticky="e")
 
         self.account_entry = tk.Entry(frame, width=25)
         self.account_entry.grid(row=1, column=1, pady=5)
         self.pin_entry = tk.Entry(frame, show="*", width=25)
         self.pin_entry.grid(row=2, column=1, pady=5)
 
-        tk.Button(frame, text="Login", command=self.login, width=10).grid(row=3, column=0, columnspan=2, pady=10)
-        tk.Button(frame, text="Back", command=self.main_menu, width=10).grid(row=4, column=0, columnspan=2)
+        tk.Button(frame, text="Login", font=("Helvecita", 9),  command=self.login, width=10).grid(row=3, column=0, columnspan=2, pady=10)
+        tk.Button(frame, text="Back", font=("Helvecita", 9),  command=self.main_menu, width=10).grid(row=4, column=0, columnspan=2)
 
     def create_account_screen(self):
         """fiók létrehozási menü"""
@@ -52,12 +54,12 @@ class BankingAppGUI:
         frame = tk.Frame(self.master)
         frame.place(relx=0.5, rely=0.5, anchor="center")  # középső frame
 
-        tk.Label(frame, text="Create Account", font=("Arial", 14)).grid(row=0, column=0, columnspan=2, pady=20)
+        tk.Label(frame, text="Create Account", font=("Verdana", 14, "bold")).grid(row=0, column=0, columnspan=2, pady=20)
 
-        tk.Label(frame, text="First Name:").grid(row=1, column=0, padx=10, pady=5, sticky="e")
-        tk.Label(frame, text="Last Name:").grid(row=2, column=0, padx=10, pady=5, sticky="e")
-        tk.Label(frame, text="Pin Code:").grid(row=3, column=0, padx=10, pady=5, sticky="e")
-        tk.Label(frame, text="Initial Balance:").grid(row=4, column=0, padx=10, pady=5, sticky="e")
+        tk.Label(frame, text="First Name:", font=("Helvecita", 10)).grid(row=1, column=0, padx=10, pady=5, sticky="e")
+        tk.Label(frame, text="Last Name:", font=("Helvecita", 10)).grid(row=2, column=0, padx=10, pady=5, sticky="e")
+        tk.Label(frame, text="Pin Code:", font=("Helvecita", 10)).grid(row=3, column=0, padx=10, pady=5, sticky="e")
+        tk.Label(frame, text="Initial Balance:", font=("Helvecita", 10)).grid(row=4, column=0, padx=10, pady=5, sticky="e")
 
         self.first_name_entry = tk.Entry(frame, width=25)
         self.first_name_entry.grid(row=1, column=1, pady=5)
@@ -68,8 +70,8 @@ class BankingAppGUI:
         self.balance_entry = tk.Entry(frame, width=25)
         self.balance_entry.grid(row=4, column=1, pady=5)
 
-        tk.Button(frame, text="Create", command=self.create_account, width=10).grid(row=5, column=0, columnspan=2, pady=10)
-        tk.Button(frame, text="Back", command=self.main_menu, width=10).grid(row=6, column=0, columnspan=2)
+        tk.Button(frame, text="Create", font=("Helvecita", 9), command=self.create_account, width=10).grid(row=5, column=0, columnspan=2, pady=10)
+        tk.Button(frame, text="Back", font=("Helvecita", 9), command=self.main_menu, width=10).grid(row=6, column=0, columnspan=2)
 
     def banking_dashboard(self):
         """Bejelentkezés utáni menü"""
@@ -78,12 +80,12 @@ class BankingAppGUI:
         frame = tk.Frame(self.master)
         frame.place(relx=0.5, rely=0.5, anchor="center")  # középső frame
 
-        tk.Label(frame, text=f"Welcome {self.controller.logged_in_account.first_name}!", font=("Arial", 14)).grid(row=0, column=0, columnspan=2, pady=20)
+        tk.Label(frame, text=f"Welcome {self.controller.logged_in_account.first_name} {self.controller.logged_in_account.last_name}!", font=("Verdana", 14, "bold")).grid(row=0, column=0, columnspan=3, pady=20)
 
-        tk.Button(frame, text="Deposit", command=self.deposit_screen, width=15, height=2).grid(row=1, column=0, pady=10)
-        tk.Button(frame, text="Withdraw", command=self.withdraw_screen, width=15, height=2).grid(row=2, column=0, pady=10)
-        tk.Button(frame, text="Check Balance", command=self.check_balance, width=15, height=2).grid(row=3, column=0, pady=10)
-        tk.Button(frame, text="Log Out", command=self.main_menu, width=15, height=2).grid(row=4, column=0, pady=10)
+        tk.Button(frame, text="Deposit", font=("Helvecita", 9), command=self.deposit_screen, width=15, height=2).grid(row=1, columnspan=3, pady=10)
+        tk.Button(frame, text="Withdraw", font=("Helvecita", 9), command=self.withdraw_screen, width=15, height=2).grid(row=2, columnspan=3, pady=10)
+        tk.Button(frame, text="Check Balance", font=("Helvecita", 9), command=self.check_balance, width=15, height=2).grid(row=3, columnspan=3, pady=10)
+        tk.Button(frame, text="Log Out", font=("Helvecita", 9), command=self.main_menu, width=15, height=2).grid(row=4, columnspan=3, pady=10)
 
     def deposit_screen(self):
         """feltöltési menü"""
@@ -92,14 +94,14 @@ class BankingAppGUI:
         frame = tk.Frame(self.master)
         frame.place(relx=0.5, rely=0.5, anchor="center")  # középső frame
 
-        tk.Label(frame, text="Deposit Money", font=("Arial", 14)).grid(row=0, column=0, columnspan=2, pady=20)
-        tk.Label(frame, text="Amount:").grid(row=1, column=0, padx=10, pady=5, sticky="e")
+        tk.Label(frame, text="Deposit Money", font=("Verdana", 14, "bold")).grid(row=0, column=0, columnspan=2, pady=20)
+        tk.Label(frame, text="Amount:", font=("Helvecita", 10)).grid(row=1, column=0, padx=10, pady=5, sticky="e")
 
         self.deposit_entry = tk.Entry(frame, width=25)
         self.deposit_entry.grid(row=1, column=1, pady=5)
 
-        tk.Button(frame, text="Deposit", command=self.deposit, width=10).grid(row=2, column=0, columnspan=2, pady=10)
-        tk.Button(frame, text="Back", command=self.banking_dashboard, width=10).grid(row=3, column=0, columnspan=2)
+        tk.Button(frame, text="Deposit", font=("Helvecita", 9), command=self.deposit, width=10).grid(row=2, column=0, columnspan=3, pady=10)
+        tk.Button(frame, text="Back", font=("Helvecita", 9), command=self.banking_dashboard, width=10).grid(row=3, column=0, columnspan=3)
 
     def withdraw_screen(self):
         """felvételi menü"""
@@ -108,14 +110,14 @@ class BankingAppGUI:
         frame = tk.Frame(self.master)
         frame.place(relx=0.5, rely=0.5, anchor="center")  # középső frame
 
-        tk.Label(frame, text="Withdraw Money", font=("Arial", 14)).grid(row=0, column=0, columnspan=2, pady=20)
-        tk.Label(frame, text="Amount:").grid(row=1, column=0, padx=10, pady=5, sticky="e")
+        tk.Label(frame, text="Withdraw Money", font=("Verdana", 14, "bold")).grid(row=0, column=0, columnspan=2, pady=20)
+        tk.Label(frame, text="Amount:", font=("Helvecita", 10)).grid(row=1, column=0, padx=10, pady=5, sticky="e")
 
         self.withdraw_entry = tk.Entry(frame, width=25)
         self.withdraw_entry.grid(row=1, column=1, pady=5)
 
-        tk.Button(frame, text="Withdraw", command=self.withdraw, width=10).grid(row=2, column=0, columnspan=2, pady=10)
-        tk.Button(frame, text="Back", command=self.banking_dashboard, width=10).grid(row=3, column=0, columnspan=2)
+        tk.Button(frame, text="Withdraw", font=("Helvecita", 9), command=self.withdraw, width=10).grid(row=2, column=0, columnspan=2, pady=10)
+        tk.Button(frame, text="Back", font=("Helvecita", 9),  command=self.banking_dashboard, width=10).grid(row=3, column=0, columnspan=2)
 
     def check_balance(self):
         """összeg lekérdezés"""
@@ -168,6 +170,7 @@ class BankingAppGUI:
             if amount > 0:
                 self.controller.logged_in_account.deposit(amount)
                 messagebox.showinfo("Success", f"Deposited ${amount:.2f}")
+                self.controller.save_accounts()
                 self.banking_dashboard()
             else:
                 messagebox.showerror("Error", "Amount must be positive")
@@ -181,6 +184,7 @@ class BankingAppGUI:
             if amount > 0 and amount <= self.controller.logged_in_account.get_balance():
                 self.controller.logged_in_account.withdraw(amount)
                 messagebox.showinfo("Success", f"Withdrew ${amount:.2f}")
+                self.controller.save_accounts()
                 self.banking_dashboard()
             else:
                 messagebox.showerror("Error", "Invalid or insufficient amount")

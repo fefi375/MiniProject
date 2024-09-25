@@ -4,7 +4,7 @@ class Account:
         self.last_name = last_name
         self._pin_code = pin_code # pin code privat itt ugy lesz valami privat ha "_" kezdődik ha jol értem
         self.balance = max(0.0, initial_balance)  # nem mehet még negatívba de ezen valtoztathatnank
-    
+
     def deposit(self, amount: float):
         #pénz számlára helyezése
         if amount > 0:

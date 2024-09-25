@@ -103,7 +103,8 @@ class BankController:
             
             if choice == '1':
                 self.logged_in_account.deposit(float(input("Enter the amount to deposit: ")))
-                print(f" withdrawn successfully.")
+                print(f" deposited successfully.")
+                self.save_accounts()
             elif choice == '2':
                 self.logged_in_account.withdraw(float(input("Enter the amount to withdraw: ")))
             elif choice == '3':
