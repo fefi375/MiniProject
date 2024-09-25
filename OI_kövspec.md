@@ -43,3 +43,14 @@ Vállalkozásunk bővítése érdekében szeretnénk egy applikációt készíte
    |   Felület |   4   |   Balance Check   |   1.0 |   A felhasználó megnézheti a számláján való összeget.|
    |   Jogosultság |   5   |   Pénz Deposit   |   1.0 |   A felhasználó pénzt tölthet fel a számlájára.   |
    |   Jogosultság    |   6   |   Pénz Withdraw   |   1.0 |   A felhasználó pénzt vehet fel.    |
+
+# 7. FogalomTár
+- **Applikáció**: Egy szoftver, amely lehetővé teszi a felhasználók számára, hogy különféle banki tevékenységeket végezzenek online, például pénzügyi tranzakciókat vagy egyenleglekérdezést.
+- **Platformfüggetlenség**: A rendszer azon képessége, hogy többféle operációs rendszeren (például Windows, Linux, macOS) egyaránt működjön.
+- **Regisztráció**: Az a folyamat, amely során egy új ügyfél létrehozza saját fiókját a banki applikációban, hogy hozzáférjen a szolgáltatásokhoz.
+- **PIN kód**: Négyjegyű biztonsági azonosító, amelyet a felhasználók a banki műveleteikhez és a bejelentkezéshez használnak.
+- **Balance Check (Pénzlekérdezés)**: Az a funkció, amely lehetővé teszi a felhasználónak, hogy megtekintse az aktuális egyenlegét a számláján.
+- **Deposit (Pénzfeltöltés)**: Az a folyamat, amely során a felhasználó pénzt helyez el a bankszámláján az applikáción keresztül.
+- **Withdraw (Pénzfelvétel)**: Az a folyamat, amelynek során a felhasználó pénzt vesz fel a bankszámlájáról az applikáció segítségével.
+- **JSON**: Adatstruktúra formátum, amelyet a felhasználói adatok (például felhasználónév, PIN kód) mentésére használnak a rendszerben.
+- **Adatmentés**: Az ügyfél adatainak (például felhasználónév és PIN kód) biztonságos tárolása a rendszerben későbbi felhasználásra.
