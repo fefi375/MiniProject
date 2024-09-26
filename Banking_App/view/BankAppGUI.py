@@ -13,7 +13,7 @@ class BankingAppGUI:
         self.master.resizable(False, False)  # nem lehet átméretezni
         self.controller = BankController()
         self.main_menu()
-
+        self.master.config(background="#2eb774")
 
     def main_menu(self):
         """Fő menü"""
@@ -26,6 +26,7 @@ class BankingAppGUI:
 
         tk.Button(frame, text="Log in", font=("Helvecita", 9, "bold"), command=self.login_screen, width=15, height=2).grid(columnspan=3, pady=10)
         tk.Button(frame, text="Create Account", font=("Helvecita", 9, "bold"), command=self.create_account_screen, width=15, height=2).grid(columnspan=3)
+        frame.config(background="#38cb82")
 
     def login_screen(self):
         """Bejelentkezési menü"""
