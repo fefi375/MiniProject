@@ -18,8 +18,16 @@ class MyTestCase(unittest.TestCase):
         self.assertRaises(ValueError, accountZero.withdraw, 1000)
         self.assertRaises(ValueError, accountOneThousand.withdraw, 0)
         self.assertRaises(ValueError, accountOneThousand.withdraw, 10001)
-        
-    
+        accountOneThousand.withdraw(1000)
+        accountZero.deposit(1000)
+        self.assertGreater(accountZero.get_balance(), accountOneThousand.get_balance())
+
+
+    def test_deposit(self):
+        accountDeposit = Account("Deposit", "Test", "0001", 0.0)
+        accountDeposit.deposit(10.0)
+        self.assertEqual(accountDeposit.get_balance(), 10.0)
+        self.assertRaises(ValueError, accountDeposit.deposit, 0)
 
 if __name__ == '__main__':
     unittest.main()
