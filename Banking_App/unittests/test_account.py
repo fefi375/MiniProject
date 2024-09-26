@@ -14,7 +14,11 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(accountOneThousand.get_balance(), 1000)
         self.assertEqual(accountOneThousand.get_balance()-1000, 0)
 
-
+    def test_withdraw(self):
+        self.assertRaises(ValueError, accountZero.withdraw, 1000)
+        self.assertRaises(ValueError, accountOneThousand.withdraw, 0)
+        self.assertRaises(ValueError, accountOneThousand.withdraw, 10001)
+        
     
 
 if __name__ == '__main__':
