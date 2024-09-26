@@ -22,7 +22,7 @@ class BankingAppGUI:
         frame = tk.Frame(self.master)
         frame.place(relx=0.5, rely=0.5, anchor="center")  # középső frame
 
-        tk.Label(frame, text="Welcome to the OI Banking App", font=("Verdana", 16, "bold")).grid(row=0, column=0, columnspan=2, pady=20)
+        tk.Label(frame, text="Welcome to the OI Banking App", font=("Verdana", 16, "bold"),bg='#38cb82').grid(row=0, column=0, columnspan=2, pady=20)
 
         tk.Button(frame, text="Log in", font=("Helvecita", 9, "bold"), command=self.login_screen, width=15, height=2).grid(columnspan=3, pady=10)
         tk.Button(frame, text="Create Account", font=("Helvecita", 9, "bold"), command=self.create_account_screen, width=15, height=2).grid(columnspan=3)
