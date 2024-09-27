@@ -136,4 +136,14 @@ A tesztelési folyamat során több szintű teszteket hajtunk végre.
 - A biztonsági frissítéseket szintén rendszeresen végrehajtjuk, különösen a hitelesítési rendszerek terén.<br>
 
 # 11. Képernyő terv
-![Alt text](https://assets.digitalocean.com/articles/alligator/boo.svg "kep")
+![Alt text](kepernyokepek\Képkivágás.PNG "kep")
+![Alt text](kepernyokepek\Képkivágás1.PNG "kep")
+![Alt text](kepernyokepek\Képkivágás3.PNG "kep")
+![Alt text](kepernyokepek\Képkivágás4.PNG "kep")
+![Alt text](kepernyokepek\Képkivágás5.PNG "kep")
+![Alt text](kepernyokepek\Képkivágás6.PNG "kep")
+![Alt text](kepernyokepek\Képkivágás7.PNG "kep")
+![Alt text](kepernyokepek\Képkivágás8.PNG "kep")
+![Alt text](kepernyokepek\Képkivágás9.PNG "kep")
+![Alt text](kepernyokepek\Képkivágás10.PNG "kep")
+![Alt text](kepernyokepek\Képkivágás11.PNG "kep")
