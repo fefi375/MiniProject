@@ -27,6 +27,7 @@ class MyTestCase(unittest.TestCase):
         accountDeposit.deposit(10.0)
         self.assertEqual(accountDeposit.get_balance(), 10.0)
         self.assertRaises(ValueError, accountDeposit.deposit, 0)
+        self.assertRaises(ValueError, accountDeposit.deposit, -1000)
 
 if __name__ == '__main__':
     unittest.main()
