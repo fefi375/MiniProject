@@ -10,7 +10,7 @@ accountOneThousand=Account("Nagy", "Helga", "3656", 1000)
 class MyTestCase(unittest.TestCase):
 
     def test_balance(self):
-        self.assertEqual(accountZero.get_balance(), 0.0)  
+        self.assertEqual(accountZero.get_balance(), 0.0)
         self.assertEqual(accountOneThousand.get_balance(), 1000)
         self.assertEqual(accountOneThousand.get_balance()-1000, 0)
         self.assertGreater(accountOneThousand.get_balance(), accountZero.get_balance())
@@ -19,9 +19,7 @@ class MyTestCase(unittest.TestCase):
         self.assertRaises(ValueError, accountZero.withdraw, 1000)
         self.assertRaises(ValueError, accountOneThousand.withdraw, 0)
         self.assertRaises(ValueError, accountOneThousand.withdraw, 10001)
-        accountOneThousand.withdraw(1000)
-        accountZero.deposit(1000)
-        self.assertGreater(accountZero.get_balance(), accountOneThousand.get_balance())
+        self.assertRaises(ValueError, accountOneThousand.withdraw, -10)
 
 
     def test_deposit(self):
