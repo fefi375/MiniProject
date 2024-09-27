@@ -135,7 +135,7 @@ A tesztelési folyamat során több szintű teszteket hajtunk végre.
 - A felhasználói adatokat tartalmazó JSON fájlokat rendszeresen archiválni kell, hogy elkerüljük az adatvesztést.<br>
 - A biztonsági frissítéseket szintén rendszeresen végrehajtjuk, különösen a hitelesítési rendszerek terén.<br>
 
-# 11. Képernyő terv
+# 12. Képernyő terv
 ![Alt text](kepernyokepek/k1.PNG "kep")
 ![Alt text](kepernyokepek/k2.PNG "kep")
 ![Alt text](kepernyokepek/k3.PNG "kep")
