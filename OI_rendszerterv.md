@@ -134,3 +134,6 @@ A tesztelési folyamat során több szintű teszteket hajtunk végre.
 - A karbantartás részeként rendszeres frissítéseket biztosítunk a hibák javítására és a funkciók bővítésére.<br>
 - A felhasználói adatokat tartalmazó JSON fájlokat rendszeresen archiválni kell, hogy elkerüljük az adatvesztést.<br>
 - A biztonsági frissítéseket szintén rendszeresen végrehajtjuk, különösen a hitelesítési rendszerek terén.<br>
+
+# 11. Képernyő terv
+![Alt text](https://assets.digitalocean.com/articles/alligator/boo.svg "kep")

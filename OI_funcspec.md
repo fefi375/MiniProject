@@ -84,6 +84,7 @@ Az applikáció lehetővé teszi, hogy a felhasználók bárhonnan, akár mobilt
 
 
 # 8. Képernyőtervek
+![Alt text](kepterv.PNG "kepterv")
 
 # 9. Forgatókönyv
 
