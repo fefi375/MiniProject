@@ -96,8 +96,9 @@ class BankingAppGUI:
 
         frame = tk.Frame(self.master)
         frame.place(relx=0.5, rely=0.5, anchor="center")  # középső frame
+        frame.configure(background="#2eb774")
 
-        tk.Label(frame, text="Deposit Money", font=("Verdana", 14, "bold")).grid(row=0, column=0, columnspan=2, pady=20)
+        tk.Label(frame,bg="#2eb774", text="Deposit Money", font=("Verdana", 14, "bold")).grid(row=0, column=0, columnspan=2, pady=20)
         tk.Label(frame, text="Amount:", font=("Helvecita", 10)).grid(row=1, column=0, padx=10, pady=5, sticky="e")
 
         self.deposit_entry = tk.Entry(frame, width=25)
@@ -112,8 +113,9 @@ class BankingAppGUI:
 
         frame = tk.Frame(self.master)
         frame.place(relx=0.5, rely=0.5, anchor="center")  # középső frame
+        frame.configure(background="#2eb774")
 
-        tk.Label(frame, text="Withdraw Money", font=("Verdana", 14, "bold")).grid(row=0, column=0, columnspan=2, pady=20)
+        tk.Label(frame,bg="#2eb774", text="Withdraw Money", font=("Verdana", 14, "bold")).grid(row=0, column=0, columnspan=2, pady=20)
         tk.Label(frame, text="Amount:", font=("Helvecita", 10)).grid(row=1, column=0, padx=10, pady=5, sticky="e")
 
         self.withdraw_entry = tk.Entry(frame, width=25)
