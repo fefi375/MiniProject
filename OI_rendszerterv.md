@@ -131,21 +131,21 @@ a GDPR-nak.
 
 
 - **Menü Hierarchia**:
-    1. Főmenü:
-        - Bejelentkezés
-        - Regisztráció
-    2. Regisztráció:
-        - Adatmegadás
-        - felhasználó regisztrálása
-    3. Bejelentkezés:
-        - Név (First_name Last_name) és PIN kód megadása után bejelentkezés
-    4. Irányítópult:
-        - Balance Check
-        - Withdraw
-            - Összeg megadása:
-        - Deposit
-            - Összeg megadása:
-        - Kilépés
+1. **Főmenü**:
+    - Bejelentkezés
+    - Regisztráció
+2. **Regisztráció**:
+    - Adatmegadás
+    - felhasználó regisztrálása
+3. **Bejelentkezés**:
+    - Név (First_name Last_name) és PIN kód megadása után bejelentkezés
+4. **Irányítópult**:
+    - Balance Check
+    - Withdraw
+        - Összeg megadása:
+    - Deposit
+        - Összeg megadása:
+    - Kilépés
 
 # 6. Fizikai környezet
 - A rendszer egy Python környezetben futó asztali alkalmazás.<br>
@@ -169,35 +169,34 @@ a GDPR-nak.
 # 8. Adatbázis terv
 Az adatbázis terve az alkalmazás felhasználói adatainak, tranzakcióinak és egyéb releváns információinak hatékony kezelésére összpontosít. Az alábbiakban bemutatjuk a tervezett adatbázis struktúráját, valamint a táblák közötti kapcsolatokat.
 
-- 8.1. Adatbázis táblák
-    1. Felhasználók (Users)
+- **8.1. Adatbázis táblák**
+1. **Felhasználók (Users)**
+    - user_id (INT, PRIMARY KEY, AUTO_INCREMENT): A felhasználó egyedi azonosítója.
+    - first_name (VARCHAR(30)): A felhasználó keresztneve.
+    - last_name (VARCHAR(30)): A felhasználó vezetékneve.
+    - pin (Integer): A felhasználó PIN kódja.
+    - balance (Float): A felhasználó számlaegyenlege.
 
-        - user_id (INT, PRIMARY KEY, AUTO_INCREMENT): A felhasználó egyedi azonosítója.
-        - first_name (VARCHAR(50)): A felhasználó keresztneve.
-        - last_name (VARCHAR(50)): A felhasználó vezetékneve.
-        - pin (Integer): A felhasználó PIN kódja.
-        - balance (Float): A felhasználó számlaegyenlege.
+2. **Tranzakciók (Transactions)**
+    - transaction_id (INT): A tranzakció egyedi azonosítója.
+    - user_id (INT): A felhasználó azonosítója, aki végrehajtotta a tranzakciót.
+    - transaction_type (ENUM('withdraw', 'deposit')): A tranzakció típusa.
+    - amount (Float): A tranzakció összege.
+    - timestamp (DATETIME): A tranzakció időpontja.
 
-    2. Tranzakciók (Transactions)
-
-        - transaction_id (INT): A tranzakció egyedi azonosítója.
-        - user_id (INT): A felhasználó azonosítója, aki végrehajtotta a tranzakciót.
-        - transaction_type (ENUM('withdraw', 'deposit')): A tranzakció típusa.
-        - amount (Float): A tranzakció összege.
-        - timestamp (DATETIME): A tranzakció időpontja.
-- 8.2. Kapcsolatok
+- **8.2. Kapcsolatok**
 A Felhasználók tábla és a Tranzakciók tábla között egy 1
 (egy-több) kapcsolat áll fenn, mivel egy felhasználó több tranzakciót is végrehajthat.
 
-- 8.3 Adatbázis ábra
+- **8.3 Adatbázis ábra**
 
-   ![Adatbázis_kép](kepernyokepek/Adatb_kep.PNG "Adatb_kép")
+   ![Adatbázis_kép](kepernyokepek/Adatbazis_kep.PNG "Adatb_kép")
 
-- 8.4. Adatbázis Funkcionalitások
-    1. Regisztráció: Új felhasználók adatai a Felhasználók táblába kerülnek.
-    2. Bejelentkezés: A felhasználó hitelesítése a PIN kód hashelése és az e-mail cím ellenőrzése alapján.
-    3. Egyenleg lekérdezése: A felhasználó egyenlegének lekérdezése a Felhasználók táblából.
-    4. Pénzfelvétel és befizetés: A tranzakciók rögzítése a Tranzakciók táblába, az egyenleg frissítése a Felhasználók táblában.
+- **8.4. Adatbázis Funkcionalitások**
+1. **Regisztráció**: Új felhasználók adatai a Felhasználók táblába kerülnek.
+2. **Bejelentkezés**: A felhasználó hitelesítése a PIN kód hashelése és az e-mail cím ellenőrzése alapján.
+3. **Egyenleg lekérdezése**: A felhasználó egyenlegének lekérdezése a Felhasználók táblából.
+4. **Pénzfelvétel és befizetés**: A tranzakciók rögzítése a Tranzakciók táblába, az egyenleg frissítése a Felhasználók táblában.
 
 
 # 9. Implementációs terv
