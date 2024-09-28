@@ -36,6 +36,10 @@
 - Ez lehetővé teszi az egyszerű regisztrációt és a felhasználói adatkezelést.<br>
 - A projekt tervezett időtartama 3 hét, figyelembe véve az időlimitációkat.<br>
 - Folyamatosan teszteljük és fejlesztjük a funkciókat a projekt során.<br>
+- Projektmunkások és feladatkörök: Backend munkálatok: a csapat összes tagja,GUI megvalósítása: 
+Fink József, Specifikációk megírása: Veress József, Egyszégtesztek megírása: Szűcs Ferenc,
+adatok megfelelő tárolása: Fink József, specifikációk bővítése: Fink József, Szűcs Ferenc,
+GUI szépítése: Veress József. Osztályok megírása: Fink József, Veress József.
 
 # 3. Üzleti folyamatok modellje
 Az alkalmazás fő üzleti folyamatai a következők:
