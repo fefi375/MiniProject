@@ -75,6 +75,9 @@ Az alkalmazás fő üzleti folyamatai a következők:
     - A felhasználói regisztráció, belépés, egyenleglekérdezés, pénzfelvétel és befizetés funkcióknak minden esetben megfelelően kell működniük.
 6. **Könnyű kezelhetőség**:
     - Az alkalmazásnak felhasználóbarátnak és intuitívnak kell lennie.
+7. **Törvényi előírások:** A személyes adatok tárolása teljes mértékben megfelel
+a GDPR-nak.
+   
 
 # 5. Funkcionális terv
 1. **Felhasználói regisztráció**:
@@ -138,6 +141,7 @@ A tesztelési folyamat során több szintű teszteket hajtunk végre.
 - A karbantartás részeként rendszeres frissítéseket biztosítunk a hibák javítására és a funkciók bővítésére.<br>
 - A felhasználói adatokat tartalmazó JSON fájlokat rendszeresen archiválni kell, hogy elkerüljük az adatvesztést.<br>
 - A biztonsági frissítéseket szintén rendszeresen végrehajtjuk, különösen a hitelesítési rendszerek terén.<br>
+- Folyamatosan keressük az olyan réseket mely az adatok biztonságát veszélyezteti. <br>
 
 # 12. Képernyő terv
 ![Alt text](kepernyokepek/k1.PNG "kep")
