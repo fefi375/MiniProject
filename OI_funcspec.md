@@ -15,24 +15,37 @@
 
 # 1. Áttekintés
 
-Az IO Bankcsoport célja, hogy egy modern, felhasználóbarát és biztonságos banki applikációt fejlesszen, amely megkönnyíti ügyfeleink számára a bankszámlák kezelését és a pénzügyi tranzakciók lebonyolítását.<br>
-Az applikáció elsődleges funkciója, hogy a felhasználók számára kényelmes és hatékony megoldást biztosítson a számlaegyenleg megtekintésére, valamint a pénzfeltöltés és pénzfelvétel lebonyolítására.<br>
-Az alkalmazás használatát minden, a bankunkhoz tartozó számlával rendelkező ügyfél számára elérhetővé tesszük, függetlenül attól, hogy milyen platformot használnak – legyen szó asztali számítógépről, laptopról vagy mobil eszközről.<br>
-A rendszer tervezésénél nagy hangsúlyt fektetünk a platformfüggetlenségre, hogy ügyfeleink bárhonnan és bármilyen eszközről elérhessék bankszámláikat, ezzel is növelve az applikáció használhatóságát és elérhetőségét.<br>
-Az applikáció lehetőséget biztosít a felhasználók számára, hogy valós időben nyomon követhessék számlaegyenlegüket, és zökkenőmentesen végezhessenek tranzakciókat, például pénzt tölthetnek fel számlájukra vagy vehetnek le arról.<br>
-A rendszer emellett magas fokú biztonságot kínál, garantálva, hogy a felhasználók személyes és pénzügyi adatai védve legyenek a legújabb adatvédelmi és IT biztonsági szabványoknak megfelelően.<br>
-A felhasználói élmény optimalizálása érdekében az alkalmazás intuitív és egyszerűen használható felületet biztosít, amely lehetővé teszi, hogy az ügyfelek gyorsan és könnyedén végezhessenek pénzügyi tranzakciókat.<br>
-Az IO Bankcsoport számára kiemelten fontos, hogy ügyfelei teljeskörű szolgáltatásokat vehessenek igénybe online felületen is, minimalizálva az ügyfélszolgálati irodákban történő személyes megjelenés szükségességét.<br>
-Az applikáció bevezetésével az IO Bankcsoport célja, hogy még versenyképesebb és ügyfélközpontúbb szolgáltatást nyújtson, miközben megőrzi a bankunk által kínált biztonságot és megbízhatóságot.<br>
+Az IO Bankcsoport célja, hogy egy modern, felhasználóbarát és biztonságos banki applikációt fejlesszen, amely megkönnyíti ügyfeleink számára a bankszámlák kezelését és a pénzügyi tranzakciók lebonyolítását.
+
+Az applikáció elsődleges funkciója, hogy a felhasználók számára kényelmes és hatékony megoldást biztosítson a számlaegyenleg megtekintésére, valamint a pénzfeltöltés és pénzfelvétel lebonyolítására.
+
+Az alkalmazás használatát minden, a bankunkhoz tartozó számlával rendelkező ügyfél számára elérhetővé tesszük, függetlenül attól, hogy milyen platformot használnak – legyen szó asztali számítógépről, laptopról vagy mobil eszközről.
+
+A rendszer tervezésénél nagy hangsúlyt fektetünk a platformfüggetlenségre, hogy ügyfeleink bárhonnan és bármilyen eszközről elérhessék bankszámláikat, ezzel is növelve az applikáció használhatóságát és elérhetőségét.
+
+Az applikáció lehetőséget biztosít a felhasználók számára, hogy valós időben nyomon követhessék számlaegyenlegüket, és zökkenőmentesen végezhessenek tranzakciókat, például pénzt tölthetnek fel számlájukra vagy vehetnek le arról.
+
+A rendszer emellett magas fokú biztonságot kínál, garantálva, hogy a felhasználók személyes és pénzügyi adatai védve legyenek a legújabb adatvédelmi és IT biztonsági szabványoknak megfelelően.
+
+A felhasználói élmény optimalizálása érdekében az alkalmazás intuitív és egyszerűen használható felületet biztosít, amely lehetővé teszi, hogy az ügyfelek gyorsan és könnyedén végezhessenek pénzügyi tranzakciókat.
+
+Az IO Bankcsoport számára kiemelten fontos, hogy ügyfelei teljeskörű szolgáltatásokat vehessenek igénybe online felületen is, minimalizálva az ügyfélszolgálati irodákban történő személyes megjelenés szükségességét.
+
+Az applikáció bevezetésével az IO Bankcsoport célja, hogy még versenyképesebb és ügyfélközpontúbb szolgáltatást nyújtson, miközben megőrzi a bankunk által kínált biztonságot és megbízhatóságot.
+
 Az új digitális platform segít abban, hogy az ügyfeleink bármikor és bárhonnan képesek legyenek pénzügyeik hatékony kezelésére, növelve ezzel pénzügyi szabadságukat és kényelmüket.
 
 
 # 2. Jelenlegi helyzet
 
-Az OI bankcsoport egy feltörekvő vállalkozás ami versenyképes kamatokat és nagy fokú biztonságot kínál ügyfelei számára.<br>
-Viszont bankunknak jelenleg nincs megfelelő applikációja ügyintézések lebonyolitására.<br>
-Ez nagyban megnehezíti az ügyfelek számára az ügyintézést, hiszen jelenleg füzetben és papíron tarjuk nyilván az ügyfelek banki adatait. Ez a helyzet trathatatlan.<br>
-Ennek érdekében készítünk jelenleg egy applikációt, aminek segítségével a bankunkhoz tartozó ügyfelek online is lebonyolíthatják fontosabb ügyeiket.<br>
+Az OI bankcsoport egy feltörekvő vállalkozás ami versenyképes kamatokat és nagy fokú biztonságot kínál ügyfelei számára.
+
+Viszont bankunknak jelenleg nincs megfelelő applikációja ügyintézések lebonyolitására.
+
+Ez nagyban megnehezíti az ügyfelek számára az ügyintézést, hiszen jelenleg füzetben és papíron tarjuk nyilván az ügyfelek banki adatait. Ez a helyzet trathatatlan.
+
+Ennek érdekében készítünk jelenleg egy applikációt, aminek segítségével a bankunkhoz tartozó ügyfelek online is lebonyolíthatják fontosabb ügyeiket.
+
 Ide tartozik a számlán lévő pénzlekérdezés, a pénzfeltöltés illetve pénzfelvétel.
         
 # 3. Követelménylista
@@ -67,12 +80,13 @@ Ide tartozik a pénz feltöltés, pénz felvétel valamint számlájukon lévő 
       
 # 7. Megfeleltetés
 
-Az alkalmazás használatához a felhasználónak először egy fiókot kell regisztrálnia, amelyhez feltétel, hogy rendelkezzen a bankunkhoz tartozó bankszámlával.<br>
-A regisztráció során a felhasználó megadja személyes adatait, például a nevét és egy általa választott PIN kódot, amelyet a rendszer a biztonsági előírásoknak megfelelően tárol és kezel.<br>
+Az alkalmazás használatához a felhasználónak először egy fiókot kell regisztrálnia, amelyhez feltétel, hogy rendelkezzen a bankunkhoz tartozó bankszámlával.
+
+A regisztráció során a felhasználó megadja személyes adatait, például a nevét és egy általa választott PIN kódot, amelyet a rendszer a biztonsági előírásoknak megfelelően tárol és kezel.
+
 A regisztráció befejezése után a felhasználó hozzáférhet az applikáció teljes funkcionalitásához.
 
-A sikeres regisztrációt követően a felhasználó az általa megadott felhasználónév és PIN kód kombinációjával léphet be a rendszerbe.<br>
-A belépési folyamat során a rendszer ellenőrzi a megadott adatokat, és ha azok helyesek, a felhasználó számára megnyílik az applikáció fő menüje.<br>
+A sikeres regisztrációt követően a felhasználó az általa megadott felhasználónév és PIN kód kombinációjával léphet be a rendszerbe. A belépési folyamat során a rendszer ellenőrzi a megadott adatokat, és ha azok helyesek, a felhasználó számára megnyílik az applikáció fő menüje.<br>
 - Ebben a menüben a felhasználó több lehetőség közül választhat:
    - lekérdezheti a bankszámláján aktuálisan rendelkezésre álló összeget
    - pénzt tölthet fel a számlájára
@@ -84,7 +98,13 @@ Az applikáció lehetővé teszi, hogy a felhasználók bárhonnan, akár mobilt
 
 
 # 8. Képernyőtervek
-![Alt text](kepterv.PNG "kepterv")
+![Alt text](kepernyokepek/k1.PNG "kepterv")
+![Alt text](kepernyokepek/k2.PNG "kepterv")
+![Alt text](kepernyokepek/k3.PNG "kepterv")
+![Alt text](kepernyokepek/k4.PNG "kepterv")
+![Alt text](kepernyokepek/k5.PNG "kepterv")
+![Alt text](kepernyokepek/k8.PNG "kepterv")
+
 
 # 9. Forgatókönyv
 
