@@ -10,10 +10,11 @@
 # 1. Jelenlegi helyzet
 Az OI bankcsoport egy feltörekvő vállalkozás ami versenyképes kamatokat és nagy fokú biztonságot kínál ügyfelei számára, viszont bankunknak jelenleg nincs megfelelő applikációja ügyintézések lebonyolitására.
 
-Ez nagyban megnehezíti az ügyfelek számára az ügyintézést, hiszen jelenleg füzetben és papíron tarjuk nyilván az ügyfelek banki adatait. Ez a helyzet trathatatlan.<br>
+Ez nagyban megnehezíti az ügyfelek számára az ügyintézést, hiszen jelenleg füzetben és papíron tarjuk nyilván az ügyfelek banki adatait. Ez a helyzet trathatatlan.
 
-Ennek érdekében készítünk jelenleg egy applikációt, amelynek segítségével a bankunkhoz tartozó ügyfelek online is lebonyolíthatják fontosabb ügyeiket.<br>
-Ide tartozik a számlán lévő pénzlekérdezés, a pénzfeltöltés illetve levétel.
+Ennek érdekében készítünk jelenleg egy applikációt, amelynek segítségével a bankunkhoz tartozó ügyfelek online is lebonyolíthatják fontosabb ügyeiket.
+
+Ide tartozik a számlán lévő pénzlekérdezés, a pénzfeltöltés illetve pénzfelvétel.
 
 # 2. Vágyálom rendszer
 Vállalkozásunk bővítése érdekében szeretnénk egy applikációt készíteni ami nem csak megkönnyíti az ügyintézést hanem biztonságosabbá is teszi azt.
@@ -21,8 +22,12 @@ Vállalkozásunk bővítése érdekében szeretnénk egy applikációt készíte
 Elvárt a platformfüggetlenség, nem elfogadható csak Microsoft Windows operációs rendszeren üzemeltethető rendszerre vonatkozó javaslat.
 
 Bankszámlanyitás után egyből regisztrálni lehet az applikációban. Ezután belépés után a felhasználó lekérdezheti a számlán lévő pénzmennyiséget, ezen kívül tölthet fel számlájára és vehet le róla pénzt.
-A bank alkalmazottai semmilyen mértékben nem férnek hozzá a felhasználók belépési PIN kódjához, így annak elfelejtése során új PIN kódot kell kérni. A csalók elleni védelem érdekében ezt csak személyesen lehet
-intézni, hiszen PIN kód cseréje csak teljeskörű személyazonosság bizonyítása után lehetséges.
+
+A bank alkalmazottai semmilyen mértékben nem férnek hozzá a felhasználók belépési PIN kódjához, így annak elfelejtése során új PIN kódot kell igényelni.
+
+A csalók elleni védelem érdekében ezt csak személyesen lehet intézni, hiszen PIN kód cseréje csak teljeskörű személyazonosság bizonyítása után lehetséges.
+
+Csalás esetén zárolhatja fiókját addig, míg nem tudja elvégezni a PIN kód cseréjét. Ezt egy telefonhívás keretében is elvégezzük, néhány személyi adat rögzítése után. A fiók tiltásának feloldásához azonban személyes jelenlétre és adategyeztetésre van szükség, amely PIN kód cseréjénél is kötelező, tehát PIN kód cseréjének esetében az adott fiókot azonnal feloldjuk.
 
 # 3. Jelenlegi üzleti folyamatok
 -   3.1. Új ügyfél Felvétele a rendszerbe: banki ugyintéző végzi => füzetbe való bejegyzése
@@ -49,13 +54,13 @@ intézni, hiszen PIN kód cseréje csak teljeskörű személyazonosság bizonyí
    |   Modul   |   ID  |   Név |   version |   Kifejtés    |
    |:----------|:------|:------|:----------|:--------------|
    |    Jogosultság |   1   |   Regisztráció    |   1.0 | Felhasználói fiók létrehozása  |
-   |    Adatkezelés |   2   |   Adat mentése    |   1.0 |   Regisztrált adatok mentése JSON file-ba |
+   |    Adatkezelés |   2   |   Adat mentése    |   1.0 |   Regisztrált adatok mentése adatbázisban |
    |   Jogosultság |   3  |    Bejelentkezés   |   1.0 |   A felhasználó a felhasználói nevével illetve PIN kód párossal bejelentkezhet. Ha a felhasználónév illetve a PIN kód páros nem megfelelő, hibaüzenetet kap. |
    |   Felület |   4   |   Balance Check   |   1.0 |   A felhasználó megnézheti a számláján való összeget.|
    |   Jogosultság |   5   |   Pénz Deposit   |   1.0 |   A felhasználó pénzt tölthet fel a számlájára.   |
    |   Jogosultság    |   6   |   Pénz Withdraw   |   1.0 |   A felhasználó pénzt vehet fel.    |
 
-# 7. FogalomTár
+# 7. Fogalomtár
 - **Applikáció**: Egy szoftver, amely lehetővé teszi a felhasználók számára, hogy különféle banki tevékenységeket végezzenek online, például pénzügyi tranzakciókat vagy egyenleglekérdezést.
 - **Platformfüggetlenség**: A rendszer azon képessége, hogy többféle operációs rendszeren (például Windows, Linux, macOS) egyaránt működjön.
 - **Regisztráció**: Az a folyamat, amely során egy új ügyfél létrehozza saját fiókját a banki applikációban, hogy hozzáférjen a szolgáltatásokhoz.
@@ -63,5 +68,5 @@ intézni, hiszen PIN kód cseréje csak teljeskörű személyazonosság bizonyí
 - **Balance Check (Pénzlekérdezés)**: Az a funkció, amely lehetővé teszi a felhasználónak, hogy megtekintse az aktuális egyenlegét a számláján.
 - **Deposit (Pénzfeltöltés)**: Az a folyamat, amely során a felhasználó pénzt helyez el a bankszámláján az applikáción keresztül.
 - **Withdraw (Pénzfelvétel)**: Az a folyamat, amelynek során a felhasználó pénzt vesz fel a bankszámlájáról az applikáció segítségével.
-- **JSON**: Adatstruktúra formátum, amelyet a felhasználói adatok (például felhasználónév, PIN kód) mentésére használnak a rendszerben.
+- **Adatbázis**: Az adatbázis egy strukturált adattároló, amely lehetővé teszi adatok rendszerezett, biztonságos és hatékony tárolását, lekérdezését és kezelését (Név, PIN kód, balance).
 - **Adatmentés**: Az ügyfél adatainak (például felhasználónév és PIN kód) biztonságos tárolása a rendszerben későbbi felhasználásra.
