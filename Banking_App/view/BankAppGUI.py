@@ -34,6 +34,7 @@ class BankingAppGUI:
 
         frame = tk.Frame(self.master)
         frame.place(relx=0.5, rely=0.5, anchor="center")  # középső frame
+        frame.configure(background="#2eb774")
 
         tk.Label(frame, text="Login", font=("Verdana", 14, "bold")).grid(row=0, column=0, columnspan=2, pady=20)
 
@@ -54,8 +55,9 @@ class BankingAppGUI:
 
         frame = tk.Frame(self.master)
         frame.place(relx=0.5, rely=0.5, anchor="center")  # középső frame
+        frame.configure(background="#2eb774")
 
-        tk.Label(frame, text="Create Account", font=("Verdana", 14, "bold")).grid(row=0, column=0, columnspan=2, pady=20)
+        tk.Label(frame, text="Create Account",bg="#2eb774", font=("Verdana", 14, "bold")).grid(row=0, column=0, columnspan=2, pady=20)
 
         tk.Label(frame, text="First Name:", font=("Helvecita", 10)).grid(row=1, column=0, padx=10, pady=5, sticky="e")
         tk.Label(frame, text="Last Name:", font=("Helvecita", 10)).grid(row=2, column=0, padx=10, pady=5, sticky="e")
@@ -80,8 +82,8 @@ class BankingAppGUI:
 
         frame = tk.Frame(self.master)
         frame.place(relx=0.5, rely=0.5, anchor="center")  # középső frame
-
-        tk.Label(frame, text=f"Welcome {self.controller.logged_in_account.first_name} {self.controller.logged_in_account.last_name}!", font=("Verdana", 14, "bold")).grid(row=0, column=0, columnspan=3, pady=20)
+        frame.configure(background="#2eb774")
+        tk.Label(frame,bg="#2eb774", text=f"Welcome {self.controller.logged_in_account.first_name} {self.controller.logged_in_account.last_name}!", font=("Verdana", 14, "bold")).grid(row=0, column=0, columnspan=3, pady=20)
 
         tk.Button(frame, text="Deposit", font=("Helvecita", 9), command=self.deposit_screen, width=15, height=2).grid(row=1, columnspan=3, pady=10)
         tk.Button(frame, text="Withdraw", font=("Helvecita", 9), command=self.withdraw_screen, width=15, height=2).grid(row=2, columnspan=3, pady=10)
