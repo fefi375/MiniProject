@@ -1,3 +1,5 @@
+import sqlite3
+
 from Banking_App.model.Account import Account
 import json
 import os
@@ -5,39 +7,66 @@ import os
 class BankController:
     def __init__(self):
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        self.file_path=os.path.join(base_dir, 'accounts.json')
+        self.file_path=os.path.join(base_dir, 'database.db')
+        self.setup_database()
         self.accounts = {} # szótárként való inicializálás miatt (biztonság kedvéért)
         self.accounts=self.load_accounts() # fiókok listalya
         self.logged_in_account = None  # bejelentkezett fiók
 
+
+
+    def setup_database(self):
+        connection=sqlite3.connect(self.file_path)
+        cursor=connection.cursor()
+
+        cursor.execute("""CREATE TABLE IF NOT EXISTS accounts (
+        first_name TEXT,
+        last_name TEXT,
+        pin_code TEXT,
+        balance REAL)"""
+                       )
+        connection.commit()
+        connection.close()
+
     def load_accounts(self):
-        """betölti az accountokat JSON-ból"""
-        if os.path.exists(self.file_path):
-            with open(self.file_path, 'r') as file:
-                accounts_data = json.load(file)
-                # Account objektumok visszakonvertálása
-                accounts = {}
-                for data in accounts_data:
-                    account = Account(data['first_name'], data['last_name'], data['pin_code'], data['balance'])
-                    account_holder = f"{data['first_name']} {data['last_name']}"
-                    accounts[account_holder] = account
-                return accounts
-        return {}  # Üres szótárt ad vissza, ha nem létezik a fájl
+        #Adatbázis kapcsolat
+        connection = sqlite3.connect(self.file_path)
+        cursor = connection.cursor()
+
+        # Lekérdezzük az összes accountot
+        cursor.execute("SELECT first_name, last_name, pin_code, balance FROM accounts")
+        accounts_data = cursor.fetchall()
+
+        # Account objektumok visszakonvertálása
+        accounts = {}
+        for data in accounts_data:
+            first_name, last_name, pin_code, balance = data
+            account = Account(first_name, last_name, pin_code, balance)
+            account_holder = f"{first_name} {last_name}"
+            accounts[account_holder] = account
+
+        connection.close()
+        return accounts  # Üres szótárt ad vissza, ha nem létezik a fájl
       
     def save_accounts(self):
-        """elmenti JSON-ba az accountokat"""
-        accounts_data = [
-            {
-                'first_name': account.first_name.strip().lower(),
-                'last_name': account.last_name.strip().lower(),
-                'pin_code': account._pin_code,  # Szükség esetén biztosítjuk a megfelelő jelszó kezelést
-                'balance': account.balance,
-            }
-            for account in self.accounts.values()
-        ]
+        """Elmenti az accountokat az SQLite3 adatbázisba."""
+        connection = sqlite3.connect(self.file_path)
+        cursor = connection.cursor()
 
-        with open(self.file_path, 'w') as file:
-            json.dump(accounts_data, file, indent=4)
+        # Először töröljük a meglévő accountokat, majd újra beszúrjuk az összeset
+        cursor.execute("DELETE FROM accounts")
+        for account in self.accounts.values():
+            cursor.execute('''
+                INSERT INTO accounts (first_name, last_name, pin_code, balance)
+                VALUES (?, ?, ?, ?)
+            ''', (account.first_name.strip().lower(),
+                  account.last_name.strip().lower(),
+                  account._pin_code,
+                  account.balance))
+
+        connection.commit()
+        connection.close()
+
 
 
     def main_menu(self):
