@@ -54,7 +54,7 @@ Ide tartozik a számlán lévő pénzlekérdezés, a pénzfeltöltés illetve p�
    |   Modul   |   ID  |   Név |   version |   Kifejtés    |
    |:----------|:------|:------|:----------|:--------------|
    |    Jogosultság |   1   |   Regisztráció    |   1.0 | Felhasználói fiók létrehozása  |
-   |    Adatkezelés |   2   |   Adat mentése    |   1.0 |   Regisztrált adatok mentése JSON file-ba |
+   |    Adatkezelés |   2   |   Adat mentése    |   1.0 |   Regisztrált adatok mentése adatbázisba |
    |   Jogosultság |   3  |    Bejelentkezés   |   1.0 |   A felhasználó a felhasználói nevével illetve PIN kód párossal bejelentkezhet. Ha a felhasználónév illetve a PIN kód páros nem megfelelő, hibaüzenetet kap. |
    |   Felület |   4   |   Balance Check   |   1.0 |   A felhasználó megnézheti a számláján való összeget.|
    |   Jogosultság |   5   |   Pénz Deposit   |   1.0 |   A felhasználó pénzt tölthet fel a számlájára.   |
@@ -122,7 +122,7 @@ Az applikáció lehetővé teszi, hogy a felhasználó egyszerűen és gyorsan v
 
 Az alábbi funkciók kerülnek megvalósításra a banki applikációban, amelyek az ügyfelek számára egyszerű és biztonságos hozzáférést biztosítanak pénzügyeik kezeléséhez.
 
-- **Új fiók létrehozása**: Az applikáció lehetővé teszi, hogy a felhasználók új fiókot hozzanak létre a rendszerben. A regisztráció során a felhasználói adatokat (felhasználónév, PIN kód) egy JSON fájlba menti a rendszer, így az adatok megőrződnek a program futtatásai között. Az adatok biztonságos tárolása elsődleges prioritás.
+- **Új fiók létrehozása**: Az applikáció lehetővé teszi, hogy a felhasználók új fiókot hozzanak létre a rendszerben. A regisztráció során a felhasználói adatokat (felhasználónév, PIN kód) adatbázisba menti a rendszer, így az adatok megőrződnek a program futtatásai között. Az adatok biztonságos tárolása elsődleges prioritás.
 
 - **PIN kód kezelése**: A fiók létrehozásakor a program ellenőrzi, hogy a PIN kód csakis 4 számjegyből álljon. A PIN kód beírása során a karakterek csillag (*) jel mögé rejtődnek, ezzel is biztosítva a titkosságot. Ez a megoldás növeli a felhasználó biztonságérzetét.
 
