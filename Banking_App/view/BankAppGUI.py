@@ -146,7 +146,7 @@ class BankingAppGUI:
             messagebox.showerror("Error", "Invalid account or pin")
 
     def create_account(self):
-        """fiók létrehozást kezelő"""
+        """Fiók létrehozása"""
         first_name = self.first_name_entry.get().strip().lower()
         last_name = self.last_name_entry.get().strip().lower()
         pin_code = self.pin_entry_create.get()
@@ -154,19 +154,32 @@ class BankingAppGUI:
 
         account_holder = f"{first_name} {last_name}"
 
+        # létezik-e már a fiók?
         if account_holder in self.controller.accounts:
             messagebox.showerror("Error", "Account already exists")
         else:
+            # PIN code ellenőrző
+            if not pin_code.isdigit() or len(pin_code) != 4:
+                messagebox.showerror("Error", "PIN code must be exactly 4 digits")
+                return
+            
             try:
+               
                 balance = float(balance)
+
+                # létrehozza az új fiókot
                 new_account = Account(first_name, last_name, pin_code, balance)
                 self.controller.accounts[account_holder] = new_account
+
+                
                 messagebox.showinfo("Success", f"Account for {account_holder} created successfully.")
                 self.controller.save_accounts()
                 self.controller.logged_in_account = new_account
                 self.banking_dashboard()
+
             except ValueError:
                 messagebox.showerror("Error", "Invalid balance amount")
+
 
     def deposit(self):
         """Pénz feltöltő kezelő"""
