@@ -90,6 +90,9 @@ Az alkalmazás fő üzleti folyamatai a következők:
     - A felhasználók megtekinthetik a korábbi tranzakciók részleteit, beleértve a dátumokat, összegeket és a tranzakció típusát.
     - Ezzel a funkcióval a felhasználók könnyen nyomon követhetik a pénzügyi aktivitásaikat.
 
+
+   ![Ábra](kepernyokepek/Abraa.jpg "Ábra")
+
 # 4. Követelmények
 1. **Python környezet**:
     - A rendszer Python 3.8+ verziót igényel.
@@ -225,6 +228,10 @@ A tesztelési folyamat során több szintű teszteket hajtunk végre.
     - Ellenőrizzük, hogy a felhasználók megfelelően tudják használni az applikációt.
 4. **Felhasználói tesztelés**:
     - A tesztelés során valós felhasználók bevonásával értékeljük az alkalmazás funkcionalitását és felhasználói élményét.
+
+![Teszt Tábla](Test_table1.png "TesztTábla")
+![Teszt Tábla2](Test_table2.png "Teszt Tábla2")
+![Teszt Tábla](Test_table3.png "Teszt Tábla3")
 
 # 11. Telepítési terv
 - A telepítés egy egyszerű Python script telepítéséből áll, amelyet a felhasználók letölthetnek és futtathatnak a saját gépükön.<br>
